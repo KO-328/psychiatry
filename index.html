@@ -46,12 +46,21 @@
     nav ul li a:hover {
       text-decoration: underline;
     }
-    .hero {
-      background-image: url("images/niigata_pic.png");
-      background-size: cover;
-      background-position: center;
-      height: 240px;
+    /* ヒーロースライダー */
+    .hero-carousel {
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
+    .hero-carousel img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: inline-block;
+      scroll-snap-align: start;
+    }
+
     .section {
       background: white;
       margin: 20px auto;
@@ -88,7 +97,7 @@
 <header>
   <div class="logo">
   <a href="index.html">
-    <img src="images/psy_logo.png" alt="新潟大学 精神医学教室のロゴ" style="height: 32px; vertical-align: middle;">
+    <img src="images/psy_logo.png" style="height: 32px; vertical-align: middle;">
     新潟大学 精神医学教室
   </a>
   </div>
@@ -104,7 +113,12 @@
   </nav>
 </header>
 
-<div class="hero"></div>
+<!-- ヒーロー画像横スクロール -->
+<div class="hero-carousel">
+  <img src="images/slide1.png" alt="研究室写真1">
+  <img src="images/slide2.png" alt="研究室写真2">
+  <img src="images/slide3.png" alt="研究室写真3">
+</div>
 
 <!-- About Section -->
 <div class="section">
