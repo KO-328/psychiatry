@@ -5,21 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新潟大学 精神医学教室</title>
   <style>
-    body {
-      font-family: sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
       background: #f9f9f9;
       color: #333;
     }
     header {
       background: #003366;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .logo a {
+      text-decoration: none;
+      color: white;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
     }
     .hero {
-      background-image: url("images/campus.jpg");
+      background-image: url("images/niigata_pic.png");
       background-size: cover;
       background-position: center;
       height: 240px;
@@ -51,14 +79,29 @@
       padding: 20px;
       background: #eee;
       font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>新潟大学 精神医学教室</h1>
-  <p>Department of Psychiatry, Niigata University</p>
+  <div class="logo">
+  <a href="index.html">
+    <img src="images/psy_logo.png" style="height: 32px; vertical-align: middle;">
+    新潟大学 精神医学教室
+  </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="about.html">教室紹介</a></li>
+      <li><a href="research.html">研究</a></li>
+      <li><a href="faculty.html">教員</a></li>
+      <li><a href="staff.html">医局員</a></li>
+      <li><a href="access.html">アクセス</a></li>
+      <li><a href="recruit.html">採用</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="hero"></div>
