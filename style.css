@@ -504,7 +504,7 @@ footer {
 }
 /* スクロール補正 スマホでリンクに飛ぶ時のヘッダー分押し下げ幅？*/
 section[id], .section[id], #about {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 100px;
 }
 
 /* テキスト折り返しを許可 */
