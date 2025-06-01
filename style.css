@@ -68,6 +68,23 @@ nav ul li a:hover {
   display: block;
   margin: 0 auto;
 }
+.slide-caption {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 12px 20px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.hero-slide:hover .slide-caption {
+  opacity: 1;
+}
 .slide-button {
   position: absolute;
   bottom: 20px;
