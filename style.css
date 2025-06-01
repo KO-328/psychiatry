@@ -357,17 +357,55 @@ footer {
 }
 
 /* ========== スマホ対応レイアウト ========== */
+/* ハンバーガーとモバイルナビ用のスタイル */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+.mobile-nav {
+  display: none;
+  background: #003366;
+  padding: 10px 20px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #555;
+}
+
+/* モバイル表示時のレイアウト */
 @media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   body {
     padding-top: 132px;
   }
 
-  .top-header,
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .top-header {
+    flex-direction: row; /* または column だとしても文脈に合わせて */
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    height: auto; /* ← 高さを固定しない */
+    height: auto;
+  }
+
+  /* ナビゲーション用の header（PC用）を非表示に */
+  header:not(.top-header) {
+    display: none;
   }
 
   .logo-area {
