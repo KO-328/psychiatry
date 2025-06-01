@@ -360,9 +360,13 @@ footer {
 /* ハンバーガーとモバイルナビ用のスタイル */
 .hamburger {
   font-size: 26px;
+  color: white;
   cursor: pointer;
   display: none;
-  color: white;
+  position: absolute;    /* 右上に固定 */
+  top: 20px;              /* 必要に応じて微調整 */
+  right: 20px;
+  z-index: 1100;          /* ヘッダーより上にくるように */
 }
 
 .mobile-nav {
@@ -401,6 +405,7 @@ footer {
     justify-content: space-between;
     padding: 10px 20px;
     height: auto;
+    position: relative; /* hamburgerのabsolute配置に必要 */
   }
   .top-header .title p {
     font-size: 10px;  /* スマホ用にやや小さめに調整 */
