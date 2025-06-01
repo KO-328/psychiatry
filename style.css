@@ -51,10 +51,13 @@ nav ul li a:hover {
 /* ヒーロースライダー */
 .hero-carousel {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden; /* ← 非表示 */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+}
+.hero-carousel:hover {/* ホバー時：スクロール可能にする（バー表示） */
+  overflow-x: auto;
 }
 .hero-slide {
   flex: 0 0 100%;
