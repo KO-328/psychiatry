@@ -58,7 +58,7 @@ nav ul li a:hover {
 }
 .hero-slide {
   flex: 0 0 100%;
-  height: 240px;
+  height: 500px;
   scroll-snap-align: start;
   position: relative;
   overflow: hidden;  /* 推奨：ボタンやキャプションがはみ出ないように */
