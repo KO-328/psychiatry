@@ -348,6 +348,14 @@ footer {
   font-size: 14px;
   margin-top: 40px;
 }
+
+.dropdown {
+  display: none;
+}
+.dropdown.show {
+  display: block;
+}
+
 /* ========== スマホ対応レイアウト ========== */
 @media screen and (max-width: 768px) {
   body {
@@ -381,24 +389,23 @@ footer {
     max-width: 140px;
   }
 
-  nav ul,
-  .main-nav {
-    flex-direction: row;     /* ← ここがポイント：横並び維持 */
-    flex-wrap: wrap;         /* ← 折り返しOKに */
-    gap: 12px;
-    padding-left: 0;
+ nav ul {
+    flex-direction: row;
+    gap: 0;
   }
 
-  .nav-item:hover .dropdown,
+  .nav-item {
+    width: 100%;
+  }
+
   .dropdown {
-    position: static;
-    display: none;
-    background: none;
+    position: relative;
     box-shadow: none;
+    background: #f9f9f9;
   }
 
-  .nav-item:hover .dropdown {
-    display: block; /* ← ホバー時は表示 */
+  .dropdown li a {
+    padding-left: 30px;
   }
 
   .dropdown li a {
