@@ -402,6 +402,15 @@ footer {
     padding: 10px 20px;
     height: auto;
   }
+  .top-header .title p {
+    font-size: 10px;  /* スマホ用にやや小さめに調整 */
+    max-width: 100%;
+  }
+
+  .top-header .title {
+    flex-shrink: 1;
+    min-width: 0;
+  }
 
   /* ナビゲーション用の header（PC用）を非表示に */
   header:not(.top-header) {
