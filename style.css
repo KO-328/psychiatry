@@ -300,6 +300,9 @@ aside ul li a:hover {
 section[id] {
   scroll-margin-top: 100px; /* トップヘッダー＋ヘッダーの高さ分でだいたい100だった */
 }
+#about {
+  scroll-margin-top: 100px;
+}
 
 .slider-container {
   display: flex;
