@@ -370,9 +370,15 @@ footer {
 }
 
 .mobile-nav {
-  display: none;
+  position: fixed;            /* ← 固定表示 */
+  top: 72px;                  /* ← .top-header の下に配置 */
+  left: 0;
+  width: 100%;
   background: #003366;
   padding: 10px 20px;
+  display: none;
+  z-index: 999;               /* ヘッダーより1段下（または上でもOK） */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-nav ul {
