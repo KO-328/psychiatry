@@ -504,7 +504,7 @@ footer {
 }
 /* スクロール補正 */
 section[id], .section[id], #about {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 
 /* テキスト折り返しを許可 */
