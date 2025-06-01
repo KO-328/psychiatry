@@ -51,13 +51,22 @@ nav ul li a:hover {
 /* ヒーロースライダー */
 .hero-carousel {
   display: flex;
-  overflow-x: hidden; /* ← 非表示 */
+  overflow-x: auto; 
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
-.hero-carousel:hover {/* ホバー時：スクロール可能にする（バー表示） */
-  overflow-x: auto;
+.hero-carousel::-webkit-scrollbar {
+  height: 8px; /* 横スクロールバーの高さ */
+  background: transparent; /* バックグラウンド透明 */
+}
+.hero-carousel:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4); /* 薄いグレー */
+}
+/* 通常時はつまみを非表示 */
+.hero-carousel::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  transition: background-color 0.4s ease;
 }
 .hero-slide {
   flex: 0 0 100%;
