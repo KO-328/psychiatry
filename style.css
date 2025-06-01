@@ -405,7 +405,7 @@ footer {
     justify-content: space-between;
     padding: 10px 20px;
     height: auto;
-    position: relative; /* hamburgerのabsolute配置に必要 */
+    position: fixed; /* hamburgerのabsolute配置に必要 */
   }
   .top-header .title p {
   white-space: nowrap;         /* 折り返し禁止 */
