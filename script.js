@@ -8,4 +8,4 @@ setInterval(() => {
     left: slides[index].offsetLeft,
     behavior: "smooth"
   });
-}, 5000);
+}, 4000);
