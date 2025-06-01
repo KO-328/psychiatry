@@ -354,7 +354,6 @@ footer {
     padding-top: 132px;
   }
 
-  /* トップヘッダーとヘッダーの縦並び */
   .top-header,
   header {
     flex-direction: column;
@@ -363,36 +362,43 @@ footer {
   }
 
   .logo-area {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    flex-direction: row;   /* ← 横並び */
+    flex-wrap: wrap;       /* ← 必要なら折り返し */
+    align-items: center;
+    gap: 10px;
   }
 
   .header-utils {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: row;   /* ← 横並び */
+    flex-wrap: wrap;       /* ← はみ出さないように */
+    align-items: center;
+    gap: 10px;
     margin-top: 10px;
   }
 
   .header-utils input[type="search"] {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    max-width: 140px;
   }
 
   nav ul,
   .main-nav {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;     /* ← ここがポイント：横並び維持 */
+    flex-wrap: wrap;         /* ← 折り返しOKに */
+    gap: 12px;
     padding-left: 0;
   }
 
   .nav-item:hover .dropdown,
   .dropdown {
     position: static;
-    display: block;
+    display: none;
     background: none;
     box-shadow: none;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block; /* ← ホバー時は表示 */
   }
 
   .dropdown li a {
@@ -400,18 +406,6 @@ footer {
     padding: 8px 12px;
   }
 
-  /* ヒーロー画像 */
-  .hero-slide {
-    height: auto;
-  }
-
-  .hero-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* 三列 → 一列 */
   .three-column-layout {
     flex-direction: column;
     gap: 20px;
@@ -425,7 +419,6 @@ footer {
     margin-bottom: 20px;
   }
 
-  /* スライダー調整 */
   .about-card {
     flex: 0 0 90%;
     max-width: 90%;
@@ -437,15 +430,5 @@ footer {
 
   .section {
     padding: 16px;
-  }
-
-  .slide-caption {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-
-  .slide-button {
-    font-size: 14px;
-    padding: 8px 16px;
   }
 }
