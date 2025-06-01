@@ -69,7 +69,7 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 .slide-caption {
-  position: absolute;
+  position: relative;
   bottom: 60px;
   left: 0;
   right: 0;
