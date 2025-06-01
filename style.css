@@ -7,16 +7,65 @@ body {
   font-family: sans-serif;
   background: #f9f9f9;
   color: #333;
+  padding-top: 132px; /* topheader40 + ヘッダー分おそらく72の余白を確保 */
 }
+/* トップヘッダーの共通スタイル */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background-color: #002244;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  transition: transform 0.3s ease; /* ← スライドアニメーション */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 非表示時の状態（上へスライド） */
+.top-header.hidden {
+  transform: translateY(-100%);
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-utils a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+.header-utils input[type="search"] {
+  padding: 6px 10px;
+  width: 150px;         /* 横幅を広げたい場合はここを調整 */
+  font-size: 14px;      /* 文字サイズ */
+  border-radius: 4px;
+  border: none;
+}
+
 header {
+  position: fixed;
+  left: 0;
+  top: 72px;
+  width: 100%;
+  height: 30px;
+  z-index: 1000;
   background: #003366;
   color: white;
-  padding: 20px 40px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .logo {
   font-size: 22px;
   font-weight: bold;
@@ -48,6 +97,52 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* ナビゲーションのドロップダウン */
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.dropdown li {
+  padding: 0;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: #003366;
+  background: white;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.dropdown li a:hover {
+  background: #f0f0f0;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
 /* ヒーロースライダー */
 .hero-carousel {
   display: flex;
@@ -70,7 +165,7 @@ nav ul li a:hover {
 }
 .hero-slide {
   flex: 0 0 100%;
-  height: 500px;
+  height: 240px;
   scroll-snap-align: start;
   position: relative;
   overflow: hidden;  /* 推奨：ボタンやキャプションがはみ出ないように */
@@ -144,6 +239,108 @@ nav ul li a:hover {
   text-decoration: none;
   border-radius: 5px;
 }
+
+/* ============================================
+   三列レイアウト（ニュース／メイン／リンク）
+   ============================================ */
+.three-column-layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.left-column, .right-column {
+  width: 15%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.center-column {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+aside h3, main h2 {
+  margin-top: 0;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+aside ul li {
+  margin-bottom: 10px;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #003366;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+/* メイン部分のスライダー*/
+.about-slider {
+  margin-bottom: 40px;
+  max-width: 100%;        /* ← 親の .center-column 内に収める */
+  overflow: hidden; /* ここで完全にはみ出しを防止 */
+}
+.about-slider h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+section[id] {
+  scroll-margin-top: 100px; /* トップヘッダー＋ヘッダーの高さ分でだいたい100だった */
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 10px;
+  max-width: 100%;       /* ← これが重要 */
+  box-sizing: border-box;
+}
+.slider-container::-webkit-scrollbar {
+  height: 6px;
+}
+.slider-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.about-card {
+  flex: 0 0 auto; /* ←固定ではなく相対的に小さく調整 */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 12px;
+  scroll-snap-align: start;
+}
+.about-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.about-card h3 {
+  font-size: 14px;
+  margin: 10px 0 6px;
+}
+.about-card .meta {
+  font-size: 12px;
+  color: #777;
+}
+
+
 footer {
   text-align: center;
   padding: 20px;
