@@ -408,6 +408,9 @@ footer {
     position: relative; /* hamburgerのabsolute配置に必要 */
   }
   .top-header .title p {
+  white-space: nowrap;         /* 折り返し禁止 */
+  overflow: hidden;            /* はみ出し部分を隠す（省略可能） */
+  text-overflow: ellipsis;     /* はみ出したら "…" で省略（任意） */
     font-size: 10px;  /* スマホ用にやや小さめに調整 */
     max-width: 100%;
   }
