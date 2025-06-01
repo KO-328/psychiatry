@@ -7,18 +7,43 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="top-header">
+  <div class="logo-area">
+  <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+    <img src="images/psy_logo.png" alt="新潟大学 精神医学教室" height="60">
+    <div class="title">
+      <h1 style="margin: 0; font-size: 20px; color: white;">新潟大学 精神医学教室</h1>
+      <p style="margin: 0; font-size: 12px; color: #ccc;">Department of Psychiatry, Niigata University</p>
+    </div>
+　</a>
+  </div>
+  <div class="header-utils">
+    <a href="#">お問い合わせ</a>
+    <a href="#">サイトマップ　</a>
+    <input type="search" placeholder="サイト内検索">
+  </div>
+</header>
+
+<nav class="main-nav-wrapper">
+
 
 <header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="images/psy_logo.png" style="height: 32px; vertical-align: middle;">
-      新潟大学 精神医学教室
-    </a>
-  </div>
   <nav>
-    <ul>
-      <li><a href="about.html">教室紹介</a></li>
-      <li><a href="research.html">研究</a></li>
+    <ul class="main-nav">
+        <li class="nav-item">
+        <a href="about.html">教室紹介</a>
+        <ul class="dropdown">
+          <li><a href="philosophy.html">理念</a></li>
+          <li><a href="history.html">沿革</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="research.html">医療関係・研究者の方へ</a>
+        <ul class="dropdown">
+          <li><a href="neuroscience.html">神経科学</a></li>
+          <li><a href="clinical.html">臨床研究</a></li>
+        </ul>
+      </li>
       <li><a href="faculty.html">教員</a></li>
       <li><a href="staff.html">医局員</a></li>
       <li><a href="access.html">アクセス</a></li>
@@ -45,35 +70,106 @@
   </div>
 </div>
 
-<div class="section">
-  <h2>About</h2>
-  <p>新潟大学精神医学教室の沿革や理念をご紹介します。教育・診療・研究の三本柱を基盤に、地域社会と連携した精神医療を展開しています。</p>
-  <a class="button" href="about.html">View more</a>
+<!-- HTML3列構造 -->
+<div class="three-column-layout">
+  <aside class="left-column">
+    <h3>最新ニュース</h3>
+    <ul>
+      <li><a href="#">2025/06/01 学会情報を更新しました</a></li>
+      <li><a href="#">2025/05/28 論文掲載のお知らせ</a></li>
+      <li><a href="#">2025/05/15 教室行事のご案内</a></li>
+      <li><a href="#">2025/05/01 研究成果を公開しました</a></li>
+    </ul>
+  </aside>
+
+　<main class="center-column">
+  <div class="section">
+    <h2><a href="about.html" style="text-decoration: none; color: inherit; background-color: #f8f8f8">教室紹介</a></h2>
+    <p>新潟大学精神医学教室の沿革や理念をご紹介します。教育・診療・研究の三本柱を基盤に、地域社会と連携した精神医療を展開しています。</p>
+<section class="about-slider">
+  <div class="slider-container">
+
+    <a href="about.html#greeting" class="about-card">
+      <img src="images/about1.png" alt="教授画像">
+      <h3>教授挨拶</h3>
+      <p class="meta">2025.06.08</p>
+    </a>
+
+    <a href="about.html#staff" class="about-card">
+      <img src="images/about2.png" alt="スタッフ画像">
+      <h3>スタッフ紹介</h3>
+      <p class="meta">2025.05.01</p>
+    </a>
+
+    <a href="about.html#history" class="about-card">
+      <img src="images/about3.png" alt="沿革画像">
+      <h3>教室の沿革</h3>
+      <p class="meta">2025.04.28</p>
+    </a>
+
+    <a href="about.html#community" class="about-card">
+      <img src="images/about4.png" alt="地域画像">
+      <h3>地域医療教育センター</h3>
+      <p class="meta">2025.04.28</p>
+    </a>
+
+    <!-- 他のカードも同様に <a> タグで囲んでください -->
+  </div>
+</section>
+    <a class="button" href="about.html">View more</a>
+  </div>
+  
+  <div class="section">
+   <h2><a href="research.html" style="text-decoration: none; color: inherit; background-color: #f8f8f8">医療関係・研究者の方へ</a></h2>
+    <p>当教室の研究領域は多岐にわたり、脳画像研究、臨床薬理学、発達精神医学などを含みます。</p>
+<section class="research-slider">
+  <div class="slider-container">
+
+     <a href="research.html#group" class="research-card">
+      <img src="images/research1.png" alt="研究グループ紹介">
+      <h3>研究グループ紹介</h3>
+      <p class="meta">2025.06.08</p>
+    </a>
+    <a href="research.html#achievements" class="research-card">
+      <img src="images/research2.png" alt="研究業績">
+      <h3>研究業績</h3>
+      <p class="meta">2025.05.01</p>
+    </a>
+    <!-- 他のニュースカードもここに追加 -->
+  </div>
+</section>
+    <a class="button" href="research.html">View more</a>
+  </div>
+
+  <div class="section">
+    <h2>Faculty</h2>
+    <p>教員の専門分野、経歴、担当分野についてご紹介します。</p>
+    <a class="button" href="faculty.html">View more</a>
+  </div>
+
+  <div class="section">
+    <h2>Staff</h2>
+    <p>医局員、技術職員、事務スタッフなど、教室を支える多職種メンバーの情報をご覧いただけます。</p>
+    <a class="button" href="staff.html">View more</a>
+  </div>
+
+  <div class="section">
+    <h2>Access</h2>
+    <p>新潟大学精神医学教室へのアクセス方法をご案内します。病院の構内図、最寄り駅からの経路なども掲載しています。</p>
+    <a class="button" href="access.html">View more</a>
+  </div>
+　</main>
+  
+　<aside class="right-column">
+    <h3>関連リンク</h3>
+    <ul>
+      <li><a href="https://www.med.niigata-u.ac.jp/">新潟大学医学部</a></li>
+      <li><a href="https://www.niigata-u.ac.jp/">新潟大学公式サイト</a></li>
+      <li><a href="#">関連学会</a></li>
+    </ul>
+  </aside>
 </div>
 
-<div class="section">
-  <h2>Research</h2>
-  <p>当教室の研究領域は多岐にわたり、脳画像研究、臨床薬理学、認知神経科学、発達精神医学などを含みます。</p>
-  <a class="button" href="research.html">View more</a>
-</div>
-
-<div class="section">
-  <h2>Faculty</h2>
-  <p>教員の専門分野、経歴、担当分野についてご紹介します。</p>
-  <a class="button" href="faculty.html">View more</a>
-</div>
-
-<div class="section">
-  <h2>Staff</h2>
-  <p>医局員、技術職員、事務スタッフなど、教室を支える多職種メンバーの情報をご覧いただけます。</p>
-  <a class="button" href="staff.html">View more</a>
-</div>
-
-<div class="section">
-  <h2>Access</h2>
-  <p>新潟大学精神医学教室へのアクセス方法をご案内します。病院の構内図、最寄り駅からの経路なども掲載しています。</p>
-  <a class="button" href="access.html">View more</a>
-</div>
 
 <footer>
   &copy; 2025 Niigata University Department of Psychiatry
