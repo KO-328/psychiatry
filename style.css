@@ -97,12 +97,16 @@ nav ul li a:hover {
   font-weight: bold;
   transition: background 0.3s;
   opacity: 0;  /* ← 最初は非表示に */
+  pointer-events: none;
 }
-.slide-button:hover {
+.hero-slide:hover .slide-button {
   opacity: 1;
+  pointer-events: auto;
+}
+
+.slide-button:hover {
   background: rgba(255, 255, 255, 0.9);
   color: #003366;
-  pointer-events: auto;
 }
 
 .section {
