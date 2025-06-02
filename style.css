@@ -365,7 +365,16 @@ section[id] {
   font-size: 12px;
   color: #777;
 }
-
+.about-card h3 a {
+  color: black;              /* 通常の状態 */
+  text-decoration: none;
+}
+.about-card h3 a:hover {
+  text-decoration: underline; /* ホバー時に下線 */
+}
+.about-card h3 a:visited {
+  color: red;                /* 訪問済みリンクは赤く */
+}
 
 footer {
   text-align: center;
