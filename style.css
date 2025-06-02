@@ -299,7 +299,7 @@ aside ul li a:hover {
   font-size: 20px;
   margin-bottom: 10px;
 }
-section[id], img[id], div[id] {
+section[id], img[id], div[id] {/*機能してなさそう*/
   scroll-margin-top: 100px; /* トップヘッダー＋ヘッダーの高さ分でだいたい100だった */
 }
 #about {
