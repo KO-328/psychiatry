@@ -200,28 +200,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script><!-- ヘッダーのマージン補正 -->
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href").substring(1);
-      const target = document.getElementById(targetId);
-      const header = document.querySelector(".top-header"); // ← 固定ヘッダーのクラス名に合わせて！
-
-      if (!target || !header) return;
-
-      e.preventDefault();
-
-      const headerHeight = header.offsetHeight;
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-      });
-    });
-  });
-});
-</script>
 </body>
 </html>
