@@ -301,7 +301,7 @@ aside ul li a:hover {
 }
 /* ヘッダーのマージンは100px */
 section[id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 #about {
   scroll-margin-top: 100px;
