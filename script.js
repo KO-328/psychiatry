@@ -25,3 +25,11 @@ window.addEventListener("load", function () {
     }
   }
 });
+
+// スマホ版のニュース一覧省略形
+  function toggleNewsList() {
+    const newsSection = document.querySelector('.news-list');
+    const btn = document.querySelector('.view-more-btn');
+    newsSection.classList.toggle('show-all');
+    btn.textContent = newsSection.classList.contains('show-all') ? '閉じる' : 'もっと見る';
+  }
