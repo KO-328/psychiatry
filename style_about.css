@@ -144,4 +144,119 @@ nav ul li a:hover {
 
 .nav-item:hover .dropdown {
   display: block;
+}/*ここまでheader*/
+
+/* ========== スマホ対応レイアウト ========== */
+/* ハンバーガーとモバイルナビ用のスタイル */
+.hamburger {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  position: absolute;    /* 右上に固定 */
+  top: 20px;              /* 必要に応じて微調整 */
+  right: 20px;
+  z-index: 1100;          /* ヘッダーより上にくるように */
 }
+
+.mobile-nav {
+  position: fixed;            /* ← 固定表示 */
+  top: 72px;                  /* ← .top-header の下に配置 */
+  left: 0;
+  width: 100%;
+  background: #003366;
+  padding: 6px 12px;
+  display: none;
+  z-index: 999;               /* ヘッダーより1段下（または上でもOK） */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 6px 8px;   /* ← 各項目の上下余白を調整 */
+  font-size: 14px;     /* ← 文字サイズ小さめに調整 */
+  border-bottom: 1px solid #445566;
+}
+
+/* モバイル表示時のレイアウト */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  body {
+    padding-top: 72px;
+  }
+
+  .top-header {
+    flex-direction: row; /* または column だとしても文脈に合わせて */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: auto;
+    position: fixed; /* hamburgerのabsolute配置に必要 */
+  }
+  .top-header .title p {
+  white-space: nowrap;         /* nowrapだと折り返し禁止 */
+  overflow: hidden;            /* はみ出し部分を隠す（省略可能） */
+  text-overflow: ellipsis;     /* はみ出したら "…" で省略（任意） */
+    font-size: 10px;  /* スマホ用にやや小さめに調整 */
+    max-width: 100%;
+  }
+
+  .top-header .title {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* ナビゲーション用の header（PC用）を非表示に */
+  header:not(.top-header) {
+    display: none;
+  }
+
+  .logo-area {
+    flex-direction: row;   /* ← 横並び */
+    /*flex-wrap: wrap;        ← 必要なら折り返し */
+    align-items: center;
+    gap: 10px;
+  }
+
+ /* ヘッダーのユーティリティ（お問い合わせ・検索）を非表示 */
+  .header-utils {
+    display: none;
+  }
+
+ nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: relative;
+    box-shadow: none;
+    background: #f9f9f9;
+  }
+
+  .dropdown li a {
+    padding-left: 30px;
+  }
+
+  .dropdown li a {
+    background: none;
+    padding: 8px 12px;
+  }/*ここまでモバイル表示*/
