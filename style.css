@@ -501,12 +501,12 @@ footer {
   .section {
     padding: 16px;
   }
-   .news-list ul li:nth-of-type(n+4) {
-    display: none;
+  .news-list ul li {
+    display: list-item;
   }
 
-  .news-list.show-all ul li {
-    display: list-item !important;
+  .news-list:not(.show-all) ul li:nth-of-type(n+4) {
+    display: none;
   }
 
   .view-more-btn {
