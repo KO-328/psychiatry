@@ -299,8 +299,9 @@ aside ul li a:hover {
   font-size: 20px;
   margin-bottom: 10px;
 }
-[id] {
-  scroll-margin-top: 100px;/* ヘッダーのマージンは100px */
+/* ヘッダーのマージンは100px */
+section[id] {
+  scroll-margin-top: 100px;
 }
 #about {
   scroll-margin-top: 100px;
