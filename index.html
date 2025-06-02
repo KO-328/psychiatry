@@ -29,6 +29,7 @@
 
   <div class="mobile-nav" id="mobileNav">
     <ul class="main-nav">
+      <li><a href="news.html">NEWS</a></li>
       <li><a href="about.html">教室紹介</a></li>
       <li><a href="research.html">医療関係・研究者の方へ</a></li>
       <li><a href="faculty.html">教員</a></li>
@@ -42,7 +43,10 @@
 <header>
   <nav>
     <ul class="main-nav">
-        <li class="nav-item">
+      <li class="nav-item">
+        <a href="index.html#news">NEWS</a><!-- 同一ページ内にジャンプ -->
+      </li> 
+      <li class="nav-item">
         <a href="index.html#about">教室紹介</a><!-- 同一ページ内にジャンプ -->
         <ul class="dropdown">
           <li><a href="index.html#prof_img">教授挨拶</a></li>
@@ -96,7 +100,8 @@
 <!-- HTML3列構造 -->
 <div class="three-column-layout">
   <aside class="left-column news-list">
-    <h3>最新ニュース</h3>
+   <div class="section" id="news">
+    <h2><a href="news.html"  class="menu-link" style="text-decoration: none; color: inherit; background-color: #f7f7f7">NEWS</a></h2>
     <ul>
       <li><a href="#">2025/06/01 学会情報を更新しました</a></li>
       <li><a href="#">2025/05/28 論文掲載のお知らせ</a></li>
@@ -105,7 +110,8 @@
     </ul>
     <button class="view-more-btn" onclick="toggleNewsList()">もっと見る</button>
   </aside>
-
+   </div>
+  
 　<main class="center-column">
   <div class="section" id="about">
     <h2><a href="about.html"  class="menu-link" style="text-decoration: none; color: inherit; background-color: #f7f7f7">教室紹介</a></h2>
