@@ -293,6 +293,7 @@ aside ul li a:hover {
 /* NEWSのホバー強調*/
 a.menu-link {
   text-decoration: none;
+  white-space: nowrap; /* ← 強制的に折り返さない */
   color: inherit;
   background-color: #f7f7f7;
   padding: 8px 12px;
