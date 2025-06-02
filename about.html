@@ -9,21 +9,24 @@
 <body>
 <header class="top-header">
   <div class="logo-area">
-  <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-    <img src="images/psy_logo.png" alt="新潟大学 精神医学教室" height="60">
-    <div class="title">
-      <h1 style="margin: 0; font-size: 20px; color: white;">新潟大学 精神医学教室</h1>
-      <p style="margin: 0; font-size: 12px; color: #ccc;">Department of Psychiatry, Niigata University</p>
-    </div>
-  </a> <!-- ← 修正済み -->
+    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <img src="images/psy_logo.png" alt="新潟大学 精神医学教室" height="60">
+      <div class="title">
+        <h1 style="margin: 0; font-size: 20px; color: white;">新潟大学 精神医学教室</h1>
+        <p style="margin: 0; font-size: 12px; color: #ccc;">Department of Psychiatry, Niigata University</p>
+      </div>
+    </a> <!-- ← 修正済み -->
   </div>
-<div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
+
+  <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
+
   <div class="header-utils">
     <a href="#">お問い合わせ</a>
     <a href="#">サイトマップ　</a>
     <input type="search" placeholder="サイト内検索">
   </div>
 </header>
+
   <div class="mobile-nav" id="mobileNav">
     <ul class="main-nav">
       <li><a href="about.html">教室紹介</a></li>
@@ -40,14 +43,16 @@
   <nav>
     <ul class="main-nav">
         <li class="nav-item">
-        <a href="about.html#about">教室紹介</a>
+        <a href="index.html#about">教室紹介</a><!-- 同一ページ内にジャンプ -->
         <ul class="dropdown">
-          <li><a href="philosophy.html">理念</a></li>
-          <li><a href="history.html">沿革</a></li>
+          <li><a href="index.html#prof_img">教授挨拶</a></li>
+          <li><a href="index.html#staff_img">スタッフ紹介</a></li>
+          <li><a href="index.html#history_img">教室の沿革</a></li>
+          <li><a href="index.html#community_img">地域医療教育センター</a></li>
         </ul>
       </li>
       <li class="nav-item">
-        <a href="research.html">研究</a>
+        <a href="research.html">医療関係・研究者の方へ</a>
         <ul class="dropdown">
           <li><a href="neuroscience.html">神経科学</a></li>
           <li><a href="clinical.html">臨床研究</a></li>
