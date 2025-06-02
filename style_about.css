@@ -144,6 +144,13 @@ nav ul li a:hover {
 
 .nav-item:hover .dropdown {
   display: block;
+}
+  /* テキスト折り返しを許可 */
+.top-header .title h1,
+.top-header .title p {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }/*ここまでheader*/
 
 /* ========== スマホ対応レイアウト ========== */
@@ -260,11 +267,5 @@ nav ul li a:hover {
     background: none;
     padding: 8px 12px;
   }
-  /* テキスト折り返しを許可 */
-.top-header .title h1,
-.top-header .title p {
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
+}/*from @media screen and (max-width: 768px)*/
   /*ここまでモバイル表示*/
