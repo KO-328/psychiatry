@@ -273,3 +273,112 @@ section[id], .section[id], #about {
   }
 }/*from @media screen and (max-width: 768px)*/
   /*ここまでモバイル表示*/
+
+.section {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  border-bottom: 2px solid #6699cc;
+  padding-bottom: 10px;
+}
+
+.professor-photo {
+  float: right;
+  width: 200px;
+  margin: 0 0 20px 20px;
+  border-radius: 8px;
+}
+
+.professor-name {
+  margin-top: 30px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.separator {
+  background-image: url('neural-separator.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 60px;
+  margin: 40px 0;
+}
+
+.role-block {
+  margin-bottom: 40px;
+}
+
+.role-block h3 {
+  font-size: 1.2em;
+  color: #003366;
+  border-left: 5px solid #6699cc;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+
+.staff-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.staff-info {
+  padding: 15px;
+}
+
+.staff-info h4 {
+  margin: 0;
+  font-size: 1em;
+  color: #003366;
+}
+
+.staff-card.no-photo {
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+}
+
+ul.namelist {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul.namelist li {
+  margin-bottom: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.9em;
+}
