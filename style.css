@@ -301,8 +301,9 @@ a.menu-link {
 }
 
 a.menu-link:hover {
-  background-color: #e0e0e0; /* やや濃いグレーでコントラストアップ */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* うっすら影で立体感 */
+  background-color: #dcdcdc; /* やや濃いグレーでコントラストアップ */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* うっすら影で立体感 */
+  transform: translateY(-2px); /* 少し浮き上がる */
 }
 
 /* メイン部分のスライダー*/
