@@ -7,7 +7,7 @@ body {
   font-family: sans-serif;
   background: #f9f9f9;
   color: #333;
-  padding-top: 132px; /* topheader40 + ヘッダー分おそらく72の余白を確保 */
+  padding-top: 112px; /* topheader40 + ヘッダー分おそらく72の余白を確保 */
   overflow-x: hidden;
   word-wrap: break-word;
 }
