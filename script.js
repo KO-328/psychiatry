@@ -9,7 +9,7 @@ setInterval(() => {
     behavior: "smooth"
   });
 }, 4000);
-
+// スマホ版のヘッダー省略形
 function toggleMobileNav() {
   const nav = document.getElementById("mobileNav");
   nav.style.display = nav.style.display === "block" ? "none" : "block";
