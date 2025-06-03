@@ -235,6 +235,12 @@
 </html>
 
 <script>
+<!-- スマホ版header省略形 -->
+function toggleMobileNav() {
+  const mobileNav = document.getElementById("mobileNav");
+  mobileNav.classList.toggle("active");
+}
+  
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButtons = document.querySelectorAll(".view-more-btn");
 
@@ -247,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 </script>
 </body>
 </html>
