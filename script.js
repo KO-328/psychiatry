@@ -59,15 +59,6 @@ window.addEventListener("load", function () {
     });
   });
 
-// ページ読み込み時に初期表示を設定
-  document.addEventListener('DOMContentLoaded', () => {
-    const newsSection = document.querySelector('.news-list');
-    const listItems = newsSection.querySelectorAll('li');
-    const showCount = window.innerWidth <= 768 ? 3 : 10;
-    listItems.forEach((li, index) => {
-      li.style.display = index < showCount ? 'list-item' : 'none';
-    });
-  });
 // トップヘッダーの分下げる機能
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
