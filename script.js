@@ -28,11 +28,46 @@ window.addEventListener("load", function () {
 
 // スマホ版のニュース一覧省略形
   function toggleNewsList() {
-    const newsSection = document.querySelector('.news-list');
+    const newsSection = document.querySelector('ul.news-list');
     const btn = document.querySelector('.view-more-btn');
-    newsSection.classList.toggle('show-all');
-    btn.textContent = newsSection.classList.contains('show-all') ? '閉じる' : 'もっと見る';
+    const isExpanded = newsSection.classList.contains('show-all');
+    const listItems = newsSection.querySelectorAll('li');
+
+    if (!isExpanded) {
+      // 省略状態 → 展開表示に切り替え
+      listItems.forEach(li => li.style.display = 'list-item');
+      newsSection.classList.add('show-all');
+      btn.textContent = '閉じる';
+    } else {
+      // 展開状態 → 省略表示に戻す
+      const showCount = window.innerWidth <= 768 ? 3 : 5;
+      listItems.forEach((li, index) => {
+        li.style.display = index < showCount ? 'list-item' : 'none';
+      });
+      newsSection.classList.remove('show-all');
+      btn.textContent = 'もっと見る';
+    }
   }
+
+  // 初期表示時に省略する
+  document.addEventListener('DOMContentLoaded', () => {
+    const newsSection = document.querySelector('ul.news-list');
+    const listItems = newsSection.querySelectorAll('li');
+    const showCount = window.innerWidth <= 768 ? 3 : 5;
+    listItems.forEach((li, index) => {
+      li.style.display = index < showCount ? 'list-item' : 'none';
+    });
+  });
+
+// ページ読み込み時に初期表示を設定
+  document.addEventListener('DOMContentLoaded', () => {
+    const newsSection = document.querySelector('.news-list');
+    const listItems = newsSection.querySelectorAll('li');
+    const showCount = window.innerWidth <= 768 ? 3 : 10;
+    listItems.forEach((li, index) => {
+      li.style.display = index < showCount ? 'list-item' : 'none';
+    });
+  });
 // トップヘッダーの分下げる機能
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
