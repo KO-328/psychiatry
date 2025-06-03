@@ -49,10 +49,10 @@
       <li class="nav-item">
         <a href="about.html">教室紹介</a>
         <ul class="dropdown">
-          <li><a href="index.html#prof_img">教授挨拶</a></li>
-          <li><a href="index.html#staff_img">スタッフ紹介</a></li>
-          <li><a href="index.html#history_img">教室の沿革</a></li>
-          <li><a href="index.html#community_img">地域医療教育センター</a></li>
+          <li><a href="#greeting">教授挨拶</a></li>
+          <li><a href="#staff">スタッフ紹介</a></li>
+          <li><a href="#history">教室の沿革</a></li>
+          <li><a href="#community">地域医療教育センター</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -71,31 +71,36 @@
 </header>
 </nav><!-- header -->
 
-  <section class="section professor-message">
-    <h2>教授挨拶</h2>
+  <section class="prof-message" id="greeting">
+   <div class="section-header"><h2>教授挨拶</h2></div>
     <img src="professor.jpg" alt="教授の写真" class="professor-photo">
+    <div class="greeting-text collapsed" id="greeting-text">
     <p>
       本学精神医学教室は、〇〇年の設立以来、精神疾患の理解と治療の進展を目指して研究・教育・臨床に取り組んできました。時代の変化に応じた精神医療の提供と、次世代を担う精神科医の育成を目指しています。
     </p>
     <p>
       神経科学やAI技術の活用、国内外との連携を通じて、よりよい精神医療の未来を築いていきたいと考えています。
     </p>
-    <p class="professor-name">新潟大学大学院 医歯学総合研究科<br>脳機能・精神医学分野 教授　山田 太郎</p>
+    <p class="professor-name">新潟大学大学院 医歯学総合研究科<br>脳機能・精神医学分野 教授　朴　秀賢</p>
+    </div>
+      <div class="button-container">
+    <button class="view-more-btn">もっと見る</button>
+      </div>
   </section>
 
-  <div class="separator"></div>
+  <!-- <div class="neural-separator"></div> -->
 
-  <section class="section staff-list">
-    <h2>スタッフ紹介</h2>
-
+  <section class="staff-list" id="staff">
+    <div class="section-header"><h2>スタッフ紹介</h2></div>
+  <div class="trim-text collapsed" id="trim-text">
     <!-- 教授 -->
     <div class="role-block">
       <h3>教授</h3>
       <div class="staff-grid">
         <div class="staff-card">
-          <img src="someshita.jpg" alt="染矢 俊幸" class="staff-photo">
+          <img src="images/prof.jpg" alt="教授" class="staff-photo">
           <div class="staff-info">
-            <h4>染矢 俊幸</h4>
+            <h4>朴　秀賢</h4>
           </div>
         </div>
       </div>
@@ -106,9 +111,9 @@
       <h3>准教授</h3>
       <div class="staff-grid">
         <div class="staff-card">
-          <img src="watanabe.jpg" alt="渡部 雄一郎" class="staff-photo">
+          <img src="watanabe.jpg" alt="准教授" class="staff-photo">
           <div class="staff-info">
-            <h4>渡部 雄一郎</h4>
+            <h4>〇〇</h4>
           </div>
         </div>
       </div>
@@ -119,14 +124,14 @@
       <h3>講師</h3>
       <div class="staff-grid">
         <div class="staff-card">
-          <img src="egawa.jpg" alt="江川 純" class="staff-photo">
+          <img src="egawa.jpg" alt="講師1" class="staff-photo">
           <div class="staff-info">
-            <h4>江川 純</h4>
+            <h4>〇〇</h4>
           </div>
         </div>
         <div class="staff-card no-photo">
           <div class="staff-info">
-            <h4>小野 信</h4>
+            <h4>〇〇</h4>
           </div>
         </div>
       </div>
@@ -136,9 +141,38 @@
     <div class="role-block">
       <h3>助教</h3>
       <div class="staff-grid">
-        <div class="staff-card no-photo">
+        <div class="staff-card">
+　　　　　<img src="assistant1.jpg" alt="助教1" class="staff-photo">
           <div class="staff-info">
-            <h4>有波 浩</h4>
+            <h4>〇〇</h4>
+          </div>
+        </div>
+
+        <div class="staff-card">
+　　　　　<img src="assistant2.jpg" alt="助教2" class="staff-photo">
+          <div class="staff-info">
+            <h4>〇〇</h4>
+          </div>
+        </div>
+
+        <div class="staff-card">
+　　　　　<img src="assistant2.jpg" alt="助教2" class="staff-photo">
+          <div class="staff-info">
+            <h4>〇〇</h4>
+          </div>
+        </div>
+
+        <div class="staff-card">
+　　　　　<img src="assistant2.jpg" alt="助教2" class="staff-photo">
+          <div class="staff-info">
+            <h4>〇〇</h4>
+          </div>
+        </div>
+
+        <div class="staff-card">
+　　　　　<img src="assistant2.jpg" alt="助教2" class="staff-photo">
+          <div class="staff-info">
+            <h4>〇〇</h4>
           </div>
         </div>
       </div>
@@ -150,9 +184,10 @@
       <div class="staff-grid">
         <div class="staff-card no-photo">
           <div class="staff-info">
-            <h4>大竹 将貴</h4>
+            <h4>〇〇</h4>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -160,15 +195,36 @@
     <div class="role-block">
       <h3>医員</h3>
       <ul class="namelist">
-        <li>森川 亮（社会人大学院生）</li>
-        <li>渡邉 晴香</li>
         <li>神林 昂宏</li>
         <li>深石 翔</li>
         <li>横山 航平</li>
         <li>薄田 芳裕</li>
-        <li>高野 紗都子</li>
       </ul>
     </div>
+  </div>
+      <div class="button-container">
+    <button class="view-more-btn">もっと見る</button>
+      </div>
+  </section>
+
+  <section class="history-text" id="history">
+   <div class="section-header"><h2>教室の沿革</h2></div>
+    <div class="trim-text collapsed" id="trim-text">
+    <p>設立からの経緯あいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえお</p>
+    </div>
+      <div class="button-container">
+    <button class="view-more-btn">もっと見る</button>
+      </div>
+  </section>
+
+  <section class="community-text" id="community">
+   <div class="section-header"><h2>地域医療教育センター</h2></div>
+    <div class="trim-text collapsed" id="trim-text">
+    <p>設立からの経緯あいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこあいうえお</p>
+    </div>
+      <div class="button-container">
+    <button class="view-more-btn">もっと見る</button>
+      </div>
   </section>
 
   <footer class="footer">
@@ -178,39 +234,19 @@
 </body>
 </html>
 
-<div class="content">
-  <h1>教室紹介</h1>
-  <p>
-    新潟大学精神医学教室は、〇〇年に設立され、臨床・研究・教育を三本柱とした精神科医療の発展に貢献してまいりました。
-    当教室では、統合失調症、うつ病、発達障害、認知症をはじめとする多様な精神疾患に対応しつつ、地域社会と連携した包括的な医療体制の構築を目指しています。
-  </p>
-  <p>
-    また、大学院・学部教育においては、未来の精神科医・研究者の育成に力を入れています。神経生物学、認知神経科学、精神薬理学、心理社会的アプローチに至るまで、広範な分野にわたる研究活動も展開しています。
-  </p>
-  <p>
-    当ページでは、精神医学教室の理念、沿革、主な活動についてご紹介いたします。
-  </p>
-</div>
-<section id="greeting">
-  <h2>教授挨拶</h2>
-  <p>教授からのメッセージ...</p>
-</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButtons = document.querySelectorAll(".view-more-btn");
 
-<section id="staff">
-  <h2>スタッフ紹介</h2>
-  <p>スタッg..</p>
-</section>
-
-<section id="history">
-  <h2>教室の沿革</h2>
-  <p>設立からの経緯ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg...スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg...スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg.....</p>
-</section>
-
-<section id="community">
-  <h2>地域医療教育センター</h2>
-  <p>地域連携.ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg...スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg...スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg..スタッフ一覧gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggがががががががががががっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｈg....</p>
-</section>
-<script src="script.js"></script>
+  toggleButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const textBlock = this.closest(".button-container").previousElementSibling;
+      if (!textBlock) return;
+      textBlock.classList.toggle("collapsed");
+      this.textContent = textBlock.classList.contains("collapsed") ? "もっと見る" : "閉じる";
+    });
+  });
+});
+</script>
 </body>
 </html>
-
