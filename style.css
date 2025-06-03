@@ -344,7 +344,7 @@ section[id] {
   border-radius: 3px;
 }
 .about-card {
-  flex: 0 0 auto; /* ←固定ではなく相対的に小さく調整 */
+  flex: 0 0 140px; /* ←autoだと相対的に表示 */
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -353,7 +353,7 @@ section[id] {
 }
 .about-card img {
   width: 100%;
-  height: 160px;
+  height: 100px;
   object-fit: cover;
   border-radius: 4px;
 }
