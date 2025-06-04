@@ -321,7 +321,7 @@ a.menu-link:hover {
 }
 /* ヘッダーのマージンは100px */
 section[id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 100px;
 }
 #about {
   scroll-margin-top: 100px;
