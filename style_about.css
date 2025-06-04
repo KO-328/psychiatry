@@ -182,10 +182,6 @@ section[id], .section[id], #about {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.mobile-nav.active {
-  display: block;
-}
-
 .mobile-nav ul {
   list-style: none;
   padding: 0;
@@ -325,7 +321,7 @@ h2 {
   position: relative;
 }
 .trim-text.collapsed {
-  max-height: 120px; /* 表示上限（行数に応じて調整） */
+  max-height: 240px; /* 表示上限（行数に応じて調整） */
   overflow: hidden;
   position: relative;
 }
@@ -341,7 +337,7 @@ h2 {
   padding: 6px 14px;
   font-size: 14px;
   cursor: pointer;
-  background-color: #003366;
+  background-color: #005599;
   color: white;
   border: none;
   border-radius: 5px;
@@ -437,6 +433,53 @@ ul.namelist {
 
 ul.namelist li {
   margin-bottom: 5px;
+}
+
+/* 教室の沿革history */
+
+.history-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.history-header img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.history-header h2 {
+  font-size: 24px;
+  margin: 12px 0 4px;
+  color: #003366;
+}
+
+.history-header p {
+  font-size: 13px;
+  color: #666;
+}
+
+.history-table {
+  border-top: 1px solid #ccc;
+}
+
+.history-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.history-year {
+  width: 30%;
+  font-weight: bold;
+  color: #003366;
+  padding-right: 20px;
+}
+
+.history-desc {
+  width: 70%;
+  line-height: 1.5;
 }
 
 .footer {
