@@ -330,6 +330,7 @@ h2 {
 .button-container {
   text-align: right; /* ボタンを右端に */
   margin-top: 8px;
+  margin-bottom: 20px; /* お好みで調整可能 */
 }
 
 .view-more-btn {
