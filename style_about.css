@@ -334,7 +334,7 @@ h2 {
 }
 
 .view-more-btn {
-  position: fixed;/* ボタンをスクロールしても位置が固定 */
+  /* position: fixed;　ボタンをスクロールしても位置が固定 */
   margin-top: 10px;
   padding: 6px 14px;
   font-size: 14px;
