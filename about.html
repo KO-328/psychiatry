@@ -354,10 +354,16 @@
     <p>&copy; 2025 新潟大学 精神医学教室</p>
   </footer>
 
-</body>
-</html>
-
 <script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  if (nav.style.display === 'block') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'block';
+  }
+}
+  
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButtons = document.querySelectorAll(".view-more-btn");
 
