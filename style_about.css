@@ -343,6 +343,7 @@ h2 {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  z-index: 9999; /* 常に最前面に */
 }
 
 .view-more-btn:hover {
