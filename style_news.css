@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*タイトルヘッダーの装飾*/
+.section-header {
+  background-color: #003366;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding-top: 102px; /* topheader40 + ヘッダー分おそらく72の余白を確保 */
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+    .news-item {
+      background-color: #ffffff;
+      border-left: 5px solid #2e8b57;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .news-date {
+      color: #008000;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      scroll-margin-top: 112px; /* ← 固定ヘッダーの高さ112pxに合わせる */
+    }
+    .news-title {
+      background-color: #e8f0ff;
+      padding: 10px;
+      border-left: 4px solid #337ab7;
+      margin-bottom: 10px;
+
+    }
+    .news-title span {
+      font-weight: bold;
+    }
+    .news-citation {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .news-link {
+      text-align: right;
+      font-size: 12px;
+    }
+    .news-link a {
+      color: #6666cc;
+      text-decoration: none;
+    }
+
+/* トップヘッダーの共通スタイル */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background-color: #002244;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  transition: transform 0.3s ease; /* ← スライドアニメーション */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 非表示時の状態（上へスライド） */
+.top-header.hidden {
+  transform: translateY(-100%);
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-utils a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+.header-utils input[type="search"] {
+  padding: 6px 10px;
+  width: 150px;         /* 横幅を広げたい場合はここを調整 */
+  font-size: 14px;      /* 文字サイズ */
+  border-radius: 4px;
+  border: none;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 72px;
+  width: 100%;
+  height: 30px;
+  z-index: 1000;
+  background: #003366;
+  color: white;
+  padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.logo a {
+  text-decoration: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.logo a:hover {
+  background-color: #7F99B2;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ナビゲーションのドロップダウン */
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.dropdown li {
+  padding: 0;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: #003366;
+  background: white;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.dropdown li a:hover {
+  background: #f0f0f0;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+  /* テキスト折り返しを許可 */
+.top-header .title h1,
+.top-header .title p {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+/* スクロール補正 スマホでリンクに飛ぶ時のヘッダー分押し下げ幅？*/
+section[id], .section[id], #about {
+  scroll-margin-top: 100px;
+}/*ここまでheader*/
+
+/* ========== スマホ対応レイアウト ========== */
+/* ハンバーガーとモバイルナビ用のスタイル */
+.hamburger {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  position: absolute;    /* 右上に固定 */
+  top: 20px;              /* 必要に応じて微調整 */
+  right: 20px;
+  z-index: 1100;          /* ヘッダーより上にくるように */
+}
+
+.mobile-nav {
+  position: fixed;            /* ← 固定表示 */
+  top: 72px;                  /* ← .top-header の下に配置 */
+  left: 0;
+  width: 100%;
+  background: #003366;
+  padding: 6px 12px;
+  display: none;
+  z-index: 999;               /* ヘッダーより1段下（または上でもOK） */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 6px 8px;   /* ← 各項目の上下余白を調整 */
+  font-size: 14px;     /* ← 文字サイズ小さめに調整 */
+  border-bottom: 1px solid #445566;
+}
+
+/* モバイル表示時のレイアウト */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  body {
+    padding-top: 72px;
+  }
+
+  .top-header {
+    flex-direction: row; /* または column だとしても文脈に合わせて */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: auto;
+    position: fixed; /* hamburgerのabsolute配置に必要 */
+  }
+  .top-header .title p {
+  white-space: nowrap;         /* nowrapだと折り返し禁止 */
+  overflow: hidden;            /* はみ出し部分を隠す（省略可能） */
+  text-overflow: ellipsis;     /* はみ出したら "…" で省略（任意） */
+    font-size: 10px;  /* スマホ用にやや小さめに調整 */
+    max-width: 100%;
+  }
+
+  .top-header .title {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* ナビゲーション用の header（PC用）を非表示に */
+  header:not(.top-header) {
+    display: none;
+  }
+
+  .logo-area {
+    flex-direction: row;   /* ← 横並び */
+    /*flex-wrap: wrap;        ← 必要なら折り返し */
+    align-items: center;
+    gap: 10px;
+  }
+
+ /* ヘッダーのユーティリティ（お問い合わせ・検索）を非表示 */
+  .header-utils {
+    display: none;
+  }
+
+ nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: relative;
+    box-shadow: none;
+    background: #f9f9f9;
+  }
+
+  .dropdown li a {
+    padding-left: 30px;
+  }
+
+  .dropdown li a {
+    background: none;
+    padding: 8px 12px;
+  }
+}/*from @media screen and (max-width: 768px)*/
+  /*ここまでモバイル表示*/
+
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.9em;
+}
