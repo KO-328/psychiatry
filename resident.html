@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新潟大学 精神医学教室</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding-top: 102px;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+    .section-header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .news-item {
+      background-color: #ffffff;
+      border-left: 5px solid #2e8b57;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .news-date {
+      color: #008000;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      scroll-margin-top: 112px;
+    }
+    .news-title {
+      background-color: #e8f0ff;
+      padding: 10px;
+      border-left: 4px solid #337ab7;
+      margin-bottom: 10px;
+    }
+    .news-title span {
+      font-weight: bold;
+    }
+    .news-citation {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .news-link {
+      text-align: right;
+      font-size: 12px;
+    }
+    .news-link a {
+      color: #6666cc;
+      text-decoration: none;
+    }
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background-color: #002244;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .top-header.hidden {
+      transform: translateY(-100%);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-utils a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .header-utils input[type="search"] {
+      padding: 6px 10px;
+      width: 150px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: none;
+    }
+    header {
+      position: fixed;
+      left: 0;
+      top: 72px;
+      width: 100%;
+      height: 30px;
+      z-index: 1000;
+      background: #003366;
+      color: white;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    .main-nav {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      padding: 10px 0;
+      z-index: 1000;
+      min-width: 160px;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      color: #003366;
+      background: white;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .dropdown li a:hover {
+      background: #f0f0f0;
+    }
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+    .top-header .title h1,
+    .top-header .title p {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    section[id], .section[id], #about {
+      scroll-margin-top: 100px;
+    }
+    .hamburger {
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+    }
+    .mobile-nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: #003366;
+      padding: 6px 12px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mobile-nav li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 6px 8px;
+      font-size: 14px;
+      border-bottom: 1px solid #445566;
+    }
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      body {
+        padding-top: 72px;
+      }
+      .top-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: auto;
+        position: fixed;
+      }
+      .top-header .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px;
+        max-width: 100%;
+      }
+      .top-header .title {
+        flex-shrink: 1;
+        min-width: 0;
+      }
+      header:not(.top-header) {
+        display: none;
+      }
+      .logo-area {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+      .header-utils {
+        display: none;
+      }
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+        gap: 5px;
+      }
+      .nav-item {
+        width: 100%;
+      }
+      .dropdown {
+        position: relative;
+        box-shadow: none;
+        background: #f9f9f9;
+      }
+      .dropdown li a {
+        background: none;
+        padding: 8px 12px;
+        padding-left: 30px;
+      }
+    }
+</style>
+</head>
+
+<!--======= headerのhtml =======-->
+<body>
+<header class="top-header">
+  <div class="logo-area">
+    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <img src="images/psy_logo.png" alt="新潟大学 精神医学教室" height="60">
+      <div class="title">
+        <h1 style="margin: 0; font-size: 20px; color: white;">新潟大学 精神医学教室</h1>
+        <p style="margin: 0; font-size: 12px; color: #ccc;">Department of Psychiatry, Niigata University</p>
+      </div>
+    </a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
+  <div class="header-utils">
+    <a href="#">お問い合わせ</a>
+    <a href="#">サイトマップ</a>
+    <input type="search" placeholder="サイト内検索">
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <ul class="main-nav">
+    <li><a href="news.html">NEWS</a></li>
+    <li><a href="about.html">教室紹介</a></li>
+    <li><a href="researcher.html">医療関係・研究者の方へ</a></li>
+    <li><a href="resident.html">研修医・医学部生の方へ</a></li>
+    <li><a href="recruit.html">専攻医募集・採用</a></li>
+    <li><a href="medical.html">診療案内</a></li>
+    <li><a href="access.html">アクセス</a></li>
+  </ul>
+</div>
+<header>
+  <nav class="main-nav-wrapper">
+    <ul class="main-nav">
+      <li class="nav-item">
+        <a href="news.html#news">NEWS</a>
+      </li> 
+      <li class="nav-item">
+        <a href="about.html">教室紹介</a>
+        <ul class="dropdown">
+          <li><a href="about.html#greeting">教授挨拶</a></li>
+          <li><a href="about.html#staff">スタッフ紹介</a></li>
+          <li><a href="about.html#history">教室の沿革</a></li>
+          <li><a href="about.html#community">地域医療教育センター</a></li>
+          <li><a href="about.html#kanren">地域精神医療学寄附講座</a></li>
+          <li><a href="about.html#kanren_hosp">関連病院・施設</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="researcher.html">医療関係・研究者の方へ</a>
+        <ul class="dropdown">
+          <li><a href="research_group.html">研究グループ紹介</a></li>
+          <li><a href="research_achievements.html">研究業績</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="resident.html">研修医・医学部生の方へ</a>
+        <ul class="dropdown">
+          <li><a href="undergraduate.html">卒前教育</a></li>
+          <li><a href="postgraduate.html">卒後臨床研修プログラム</a></li>
+          <li><a href="specialist.html">後期研修プログラム</a></li>
+          <li><a href="faq.html">よくある質問Q&A</a></li>
+        </ul>
+      </li>
+      <li><a href="recruit.html">専攻医募集・採用</a></li>
+      <li class="nav-item">
+        <a href="medical.html">診療案内</a>
+        <ul class="dropdown">
+          <li><a href="outpatient.html">受診される患者様へ</a></li>
+          <li><a href="inpatient.html">入院の案内</a></li>
+          <li><a href="comedical.html">他の医療スタッフより</a></li>
+        </ul>
+      </li>
+      <li><a href="access.html">アクセス</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--======= mainセクションのhtml ======= -->
+<!--main タグをつけてmain用のhtmlを作っている-->
+  <main style="padding: 20px;">
+<section class="section-block" id="undergraduate">
+  <h1><a href="undergraduate.html">卒前教育</a></h1>
+
+<div class="section-content collapsed">
+      <h2>臓器別コース（医学部3年）</h2>
+      <p>3年生では、約2週間ごとで臓器別統合コースが行われます。精神医学は早い時期から学び、総論的・臨床的理解を深めます。</p>
+      <p>内容は以下の3つのユニットからなり、「症例から精神を学ぶケーススタディ」「症例に関する講義」「症例に関する課題とレポート作成」で構成されています。</p>
+      <p>ケーススタディでは約40の症例を用い、症候を抽出し、診断に関する解説を受けます。また症候に関する講義を受講し、症状・症候を記憶に残すことができます。</p>
+      <p>また、「100のQ&A」を題材に、自ら資料を調べレポートを作成します。症例レポートの作成は教員の個別指導のもとで行われます。</p>
+      <p>統合講義では発達障害や認知症についても学習できます。</p>
+
+      <h3>【ユニット】</h3>
+      <ul>
+        <li>精神疾患（精神障害学入門、疫学、診断学、治療学、検査法、精神保健福祉と法）</li>
+        <li>気分障害</li>
+        <li>統合失調症</li>
+        <li>不安障害、強迫症、身体表現性障害、解離性障害、心身症</li>
+        <li>小児・発達障害</li>
+        <li>パーソナリティ障害、性障害、摂食障害、物質関連障害</li>
+        <li>精神科緊急場面</li>
+      </ul>
+
+      <h2>臨床実習Ⅰ（医学部4〜5年）</h2>
+      <p>4年生から5年生にかけて、3週間×3回を1年間にわたり実習していきます。</p>
+      <p>精神科では、学生がチーム医療の一員として臨床実践と主体的経験をできるよう参加型の実習プログラムを組んでいます。</p>
+
+      <h3>主な内容</h3>
+      <ol>
+        <li>病棟実習：指導医と上級医のチームに学生1〜2名ずつが配置されます。実際の診療に同行して精神科治療の手法や対応の仕方を学びます。</li>
+        <li>カルテ記載・振り返り：毎日病棟に通い、診察内容をカルテに記録し、指導医からフィードバックを受けます。</li>
+        <li>症例プレゼンテーション：担当症例の退院時にプレゼンテーションを行い、指導医・担当医とディスカッションします。</li>
+        <li>外来実習：予診と診察を医師とともに経験し、患者情報をもとにプレゼンテーションし予診練習を行います。</li>
+        <li>病棟朝礼会：毎週火曜の朝に行われる病棟朝礼で、前日入院した患者さんについて報告します。</li>
+        <li>関連病院実習：関連病院にて外来・病棟の実習を行い、白根や病院にて医師に同行します。</li>
+      </ol>
+</div>
+
+  <button class="more-button" onclick="toggleContent(this)">もっと見る</button>
+</section>
+ 
+ <!-- 追加セクション -->
+<section class="section-block" id="postgraduate">
+  <h1><a href="postgraduate.html">卒後臨床研修プログラム</a></h1>
+<div class="section-content collapsed">
+  <p>新潟大学認知症研究部門は、超高齢社会における認知症の早期発見、進行予防、介護支援に向けた包括的な研究・教育・地域連携を目指しています。</p>
+
+  <ul>
+    <li>認知症の生物学的指標の探索と診断補助技術の開発</li>
+    <li>軽度認知障害（MCI）から認知症への移行リスクに関する疫学研究</li>
+    <li>地域包括ケアシステムにおける認知症支援体制の構築支援</li>
+    <li>認知症高齢者を対象とした臨床試験と薬物療法の最適化</li>
+  </ul>
+
+  <h2>～早期診断とバイオマーカー研究～</h2>
+  <p>アルツハイマー病やレビー小体型認知症を対象に、脳脊髄液バイオマーカー、画像診断、遺伝子多型などの多層的データを統合した早期診断研究を行っています。</p>
+
+  <h2>～在宅支援と地域包括連携の推進～</h2>
+  <p>新潟市内の地域包括支援センターと連携し、高齢者の孤立防止・在宅介護支援体制の質的向上を目指しています。また、ケアマネジャーや医師、家族を対象とした実践的支援マニュアルの作成にも取り組んでいます。</p>
+
+ </div>
+
+  <button class="more-button" onclick="toggleContent(this)">もっと見る</button>
+</section>
+
+</main>
+<!--  本文のレイアウト用のcss（mainセクション限定)-->
+<!--main タグをつけてmain用のstyleを作っている-->
+  <style>
+main {
+  line-height: 1.8;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+}
+main h1 {
+  text-decoration: none; 
+  color: #3366cc;         
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .names {
+  text-align: right;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+main h2 {
+  color: #003366;
+  font-size: 20px;
+  margin-top: 30px;
+  border-left: 5px solid #3366cc;
+  padding-left: 10px;
+}
+main p {
+  margin: 10px 0;
+  text-align: justify;
+}
+main ul {
+  margin: 10px 0 20px 20px;
+}
+  section.section-block {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 10px;
+  }
+  .section-block h1 {
+    font-size: 26px;
+    color: #003366;
+    margin-bottom: 10px;
+    border-left: 8px solid #3366cc;
+    border-right: 8px solid #3366cc;
+    padding-left: 12px;
+    background-color: #f0f8ff;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+.section-block h1 a {
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  box-shadow: none;
+}
+.section-block h1 a:hover {
+  text-decoration: underline; 
+  color: #003366;             
+}
+
+  .section-block .names {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .section-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  .section-block h2 {
+    font-size: 20px;
+    color: #003366;
+    padding-left: 10px;
+    margin-top: 30px;
+ border-left: 0 solid #3366cc;
+    margin-bottom: 10px;
+  }
+  .section-content {
+    font-size: 16px;
+    line-height: 1.8;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  .section-content.collapsed {
+    max-height: 300px; <!-- 折りたたみ時の高さ -->
+    position: relative;
+  }
+  .more-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #0055aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    float: right;
+    transition: background-color 0.3s;
+  }
+  .more-button:hover {
+    background-color: #003f7f;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px);
+  }
+  </style>
+<script>
+  function toggleContent(button) {
+    const content = button.previousElementSibling;
+    const collapsed = content.classList.contains('collapsed');
+    if (collapsed) {
+      content.classList.remove('collapsed');
+      content.style.maxHeight = 'none';
+      button.textContent = '閉じる';
+    } else {
+      content.classList.add('collapsed');
+      content.style.maxHeight = null;<!-- オンラインstyle削除-->
+      button.textContent = 'もっと見る';
+    }
+  }
+</script>
+</body>
+</html>
