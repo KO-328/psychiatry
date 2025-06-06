@@ -419,7 +419,8 @@ h2 {
 }
 
 .staff-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* 影が濃くなる */
 }
 
 /* 画像のスタイル 100by100 */

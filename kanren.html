@@ -281,9 +281,11 @@
   </div>
   <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
   <div class="header-utils">
-    <a href="#">お問い合わせ</a>
-    <a href="#">サイトマップ</a>
-    <input type="search" placeholder="サイト内検索">
+    <form action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="sitesearch" value="ko-328.github.io"><!--  対象ドメイン適宜変更-->
+  <input type="search" name="q" placeholder="サイト内検索">
+  <input type="submit" value="検索">
+    </form>
   </div>
 </header>
 
@@ -296,13 +298,20 @@
     <li><a href="recruit.html">専攻医募集・採用</a></li>
     <li><a href="medical.html">診療案内</a></li>
     <li><a href="access.html">アクセス</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="sitesearch" value="ko-328.github.io"><!--  対象ドメイン適宜変更-->
+  <input type="search" name="q" placeholder="サイト内検索">
+  <input type="submit" value="検索">
+    </form>
   </ul>
 </div>
+
 <header>
   <nav class="main-nav-wrapper">
     <ul class="main-nav">
       <li class="nav-item">
-        <a href="news.html#news">NEWS</a>
+        <a href="news.html">NEWS</a>
       </li> 
       <li class="nav-item">
         <a href="about.html">教室紹介</a>
@@ -318,29 +327,30 @@
       <li class="nav-item">
         <a href="researcher.html">医療関係・研究者の方へ</a>
         <ul class="dropdown">
-          <li><a href="research_group.html">研究グループ紹介</a></li>
-          <li><a href="research_achievements.html">研究業績</a></li>
+          <li><a href="researcher.html#research_achievements">研究業績</a></li>
+          <li><a href="researcher.html#research_group">研究グループ紹介</a></li>
         </ul>
       </li>
       <li class="nav-item">
         <a href="resident.html">研修医・医学部生の方へ</a>
         <ul class="dropdown">
-          <li><a href="undergraduate.html">卒前教育</a></li>
-          <li><a href="postgraduate.html">卒後臨床研修プログラム</a></li>
-          <li><a href="specialist.html">後期研修プログラム</a></li>
-          <li><a href="faq.html">よくある質問Q&A</a></li>
+          <li><a href="resident.html#undergraduate">卒前教育</a></li>
+          <li><a href="resident.html#postgraduate">卒後臨床研修プログラム</a></li>
+          <li><a href="resident.html#specialist">後期研修プログラム</a></li>
+          <li><a href="resident.html#faq">よくある質問Q&A</a></li>
         </ul>
       </li>
       <li><a href="recruit.html">専攻医募集・採用</a></li>
       <li class="nav-item">
         <a href="medical.html">診療案内</a>
         <ul class="dropdown">
-          <li><a href="outpatient.html">受診される患者様へ</a></li>
-          <li><a href="inpatient.html">入院の案内</a></li>
-          <li><a href="comedical.html">他の医療スタッフより</a></li>
+          <li><a href="medical.html#outpatient">受診される患者様へ</a></li>
+          <li><a href="medical.html#inpatient">入院の案内</a></li>
+          <li><a href="medical.html#comedical">チーム医療スタッフより</a></li>
         </ul>
       </li>
       <li><a href="access.html">アクセス</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
   </nav>
 </header>
@@ -379,7 +389,7 @@
   <p>児童精神科領域はその診療特性・制度特性・研修体制等の観点から精神科一般の中でも専門性が特に高く、従事者は非常に限られています。</p>
   <p>新潟県では近年、児童精神科医療の基盤整備が進みつつあり、例えば新潟県立精神医療センター内に開設された「子ども・思春期ユニット」では、広汎性発達障害、注意欠如多動性障害、摂食障害、心的外傷後ストレス障害など、多様な疾患に対応する新たな小児精神科医療の体制が整備されつつあります。</p>
   <p>当寄附講座では、こうした新潟県内の実情を踏まえ、発達障害や不登校、虐待などに対応できる人材・多職種の育成や診療体制の確立を目指した研究活動を行ってまいります。</p>
-  </main>
+</main>
 <!--  本文のレイアウト用のcss（mainセクション限定)-->
 <!--main タグをつけてmain用のstyleを作っている-->
   <style>

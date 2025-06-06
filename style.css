@@ -215,8 +215,8 @@ nav ul li a:hover {
 }
 
 .slide-button:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #003366;
+  transform: translateY(-3px); /* 浮き上がり */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影が深くなる */
 }
 
 .section {
@@ -254,7 +254,7 @@ nav ul li a:hover {
 }
 
 .left-column, .right-column {
-  width: 20%;
+  width: 15%;
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 8px;
@@ -262,6 +262,7 @@ nav ul li a:hover {
 
 .center-column {
   flex: 1;
+  min-width: 0; /* ← これがないと、子要素が広がってはみ出す */
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
@@ -290,7 +291,7 @@ aside ul li a:hover {
   text-decoration: underline;
 }
 
-/* NEWSのホバー強調*/
+/* NEWS,教室紹介などのボタンのホバー設定*/
 a.menu-link {
   display: inline-block; /* ← これが重要！ */
   text-decoration: none;
@@ -303,11 +304,19 @@ a.menu-link {
 }
 
 a.menu-link:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* やや濃いグレーでコントラストアップ */
-  color: #003366; /* ← これがないと文字が読みにくい */
+  background-color: #1a4466;  /* ← #003366を少し明るく */
+  color: white; /* ← これがないと文字が読みにくい */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* うっすら影で立体感 */
   transform: translateY(-2px); /* 少し浮き上がる */
 }
+/* NEWSの省略ボタン*/
+.news-list li {
+  display: none;
+}
+.news-list li.visible {
+  display: list-item;
+}
+
 
 /* メイン部分のスライダー*/
 .about-slider {
@@ -321,7 +330,7 @@ a.menu-link:hover {
 }
 /* ヘッダーのマージンは100px */
 section[id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 #about {
   scroll-margin-top: 100px;
@@ -344,16 +353,20 @@ section[id] {
   border-radius: 3px;
 }
 .about-card {
-  flex: 0 0 140px; /* ←autoだと相対的に表示 */
+  flex: 0 0 140px; /* ←auto固定ではなく相対的に小さく調整 */
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   padding: 12px;
   scroll-snap-align: start;
 }
+.about-card:hover {
+  transform: translateY(-3px); /* 少し浮く */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* 影が濃くなる */
+}
 .about-card img {
   width: 100%;
-  height: 100px;
+  height: 100px;/* ←140くらいだった */
   object-fit: cover;
   border-radius: 4px;
 }
@@ -399,8 +412,8 @@ footer {
   word-break: break-word;
 }
 /* スクロール補正 スマホでリンクに飛ぶ時のヘッダー分押し下げ幅？*/
-section[id], .section[id], #about {
-  scroll-margin-top: 100px;
+section[id], .section[id], #about, img[id], div[id] {
+  scroll-margin-top: 120px;
 }
 
 /* ========== スマホ対応レイアウト ========== */
@@ -426,10 +439,6 @@ section[id], .section[id], #about {
   display: none;
   z-index: 999;               /* ヘッダーより1段下（または上でもOK） */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-nav.active {
-  display: block;
 }
 
 .mobile-nav ul {

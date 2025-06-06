@@ -21,9 +21,11 @@
   <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
 
   <div class="header-utils">
-    <a href="#">お問い合わせ</a>
-    <a href="#">サイトマップ　</a>
-    <input type="search" placeholder="サイト内検索">
+    <form action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="sitesearch" value="ko-328.github.io"><!--  対象ドメイン適宜変更-->
+  <input type="search" name="q" placeholder="サイト内検索">
+  <input type="submit" value="検索">
+    </form>
   </div>
 </header>
 
@@ -31,45 +33,68 @@
     <ul class="main-nav">
       <li><a href="news.html">NEWS</a></li>
       <li><a href="about.html">教室紹介</a></li>
-      <li><a href="research.html">医療関係・研究者の方へ</a></li>
-      <li><a href="faculty.html">教員</a></li>
-      <li><a href="staff.html">医局員</a></li>
+      <li><a href="researcher.html">医療関係・研究者の方へ</a></li>
+      <li><a href="resident.html">研修医・医学部生の方へ</a></li>
+      <li><a href="recruit.html">専攻医募集・採用</a></li>
+      <li><a href="medical.html">診療案内</a></li>
       <li><a href="access.html">アクセス</a></li>
-      <li><a href="recruit.html">採用</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="sitesearch" value="ko-328.github.io"><!--  対象ドメイン適宜変更-->
+  <input type="search" name="q" placeholder="サイト内検索">
+  <input type="submit" value="検索">
+    </form>
     </ul>
   </div>
   
-<nav class="main-nav-wrapper">
+
 <header>
-  <nav>
+  <nav class="main-nav-wrapper">
     <ul class="main-nav">
       <li class="nav-item">
-        <a href="news.html#news">NEWS</a>
+        <a href="news.html">NEWS</a>
       </li> 
       <li class="nav-item">
         <a href="about.html">教室紹介</a>
         <ul class="dropdown">
-          <li><a href="index.html#prof_img">教授挨拶</a></li>
-          <li><a href="index.html#staff_img">スタッフ紹介</a></li>
-          <li><a href="index.html#history_img">教室の沿革</a></li>
-          <li><a href="index.html#community_img">地域医療教育センター</a></li>
+          <li><a href="about.html#greeting">教授挨拶</a></li>
+          <li><a href="about.html#staff">スタッフ紹介</a></li>
+          <li><a href="about.html#history">教室の沿革</a></li>
+          <li><a href="about.html#community">地域医療教育センター</a></li>
+          <li><a href="about.html#kanren">地域精神医療学寄附講座</a></li>
+          <li><a href="about.html#kanren_hosp">関連病院・施設</a></li>
         </ul>
       </li>
       <li class="nav-item">
-        <a href="research.html">医療関係・研究者の方へ</a>
+        <a href="researcher.html">医療関係・研究者の方へ</a>
         <ul class="dropdown">
-          <li><a href="neuroscience.html">神経科学</a></li>
-          <li><a href="clinical.html">臨床研究</a></li>
+          <li><a href="researcher.html#research_achievements">研究業績</a></li>
+          <li><a href="researcher.html#research_group">研究グループ紹介</a></li>
         </ul>
       </li>
-      <li><a href="faculty.html">教員</a></li>
-      <li><a href="staff.html">医局員</a></li>
+      <li class="nav-item">
+        <a href="resident.html">研修医・医学部生の方へ</a>
+        <ul class="dropdown">
+          <li><a href="resident.html#undergraduate">卒前教育</a></li>
+          <li><a href="resident.html#postgraduate">卒後臨床研修プログラム</a></li>
+          <li><a href="resident.html#specialist">後期研修プログラム</a></li>
+          <li><a href="resident.html#faq">よくある質問Q&A</a></li>
+        </ul>
+      </li>
+      <li><a href="recruit.html">専攻医募集・採用</a></li>
+      <li class="nav-item">
+        <a href="medical.html">診療案内</a>
+        <ul class="dropdown">
+          <li><a href="medical.html#outpatient">受診される患者様へ</a></li>
+          <li><a href="medical.html#inpatient">入院の案内</a></li>
+          <li><a href="medical.html#comedical">チーム医療スタッフより</a></li>
+        </ul>
+      </li>
       <li><a href="access.html">アクセス</a></li>
-      <li><a href="recruit.html">採用</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
   </nav>
 </header>
-</nav>
 
 <div class="hero-carousel" id="carousel">
   <div class="hero-slide">
@@ -133,29 +158,38 @@
   <div class="slider-container">
 
     <a href="about.html#greeting" class="about-card">
-　　　 <img id="prof_img" src="images/about1.png" alt="教授画像" style="scroll-margin-top: 100px;">
+　　　 <img id="prof_img" src="images/about1.png" alt="教授画像">
       <h3>教授挨拶</h3>
       <!--<p class="meta">2025.06.08</p>-->
     </a>
 
     <a href="about.html#staff" class="about-card">
-      <img id="staff_img" src="images/about2.png" alt="スタッフ紹介" style="scroll-margin-top: 100px;">
+      <img id="staff_img" src="images/about2.png" alt="スタッフ紹介">
       <h3>スタッフ紹介</h3>
       <!--<p class="meta">2025.05.01</p>-->
     </a>
 
+     <div id="history_anchor" style="scroll-margin-top: 200px; height: 1px;"></div>
     <a href="about.html#history" class="about-card">
-      <img id="history_img" src="images/about3.png" alt="教室の沿革" style="scroll-margin-top: 100px;">
+      <img src="images/about3.png" alt="教室の沿革">
       <h3>教室の沿革</h3>
-      <!--<p class="meta">2025.04.28</p>-->
     </a>
 
     <a href="about.html#community" class="about-card">
-      <img id="community_img" src="images/about4.png" alt="地域画像" style="scroll-margin-top: 100px;">
+      <img id="community_img" src="images/about4.png" alt="地域画像">
       <h3>地域医療教育センター</h3>
       <!--<p class="meta">2025.04.28</p>-->
     </a>
 
+    <a href="about.html#kanren" class="about-card">
+      <img id="kanren_img" src="images/about5.png" alt="地域医療">
+      <h3>地域精神医療学寄附講座</h3>
+      <!--<p class="meta">2025.04.28</p>-->
+    </a>
+    <a href="about.html#kanren_hosp" class="about-card">
+      <img id="kanren_hosp_img" src="images/about6.png" alt="関連病院">
+      <h3>関連病院・施設</h3>
+    </a>
     <!-- 他のカードも同様に <a> タグで囲んでください -->
   </div>
 </section>
@@ -165,38 +199,98 @@
   <div class="section">
    <h2><a href="research.html" class="menu-link">医療関係・研究者の方へ</a></h2>
     <p>当教室の研究領域は多岐にわたり、脳画像研究、臨床薬理学、発達精神医学などを含みます。</p>
-<section class="research-slider">
+ <section class="research-slider">
   <div class="slider-container">
-
-     <a href="research.html#group" class="research-card">
+<!-- ジャンプ先として機能する透明なアンカー -->
+<div id="research1" style="height: 1px; scroll-margin-top: 140px;"></div>
+     <a href="research_group.html" class="about-card">
       <img src="images/research1.png" alt="研究グループ紹介">
       <h3>研究グループ紹介</h3>
       <!--<p class="meta">2025.06.08</p>-->
     </a>
-    <a href="research.html#achievements" class="research-card">
-      <img src="images/research2.png" alt="研究業績">
+    <a href="research.html#achievements" class="about-card">
+      <img id="research2" src="images/research2.png" alt="研究業績">
       <h3>研究業績</h3>
       <!--<p class="meta">2025.05.01</p>-->
     </a>
     <!-- 他のニュースカードもここに追加 -->
   </div>
-</section>
+ </section>
   </div>
 
   <div class="section">
     <h2><a href="resident.html" class="menu-link">研修医・医学部生の方へ</a></h2>
     <p>医学部生の方へ。</p>
+ <section class="resident-slider">
+  <div class="slider-container">
+     <a href="resident.html#undergraduate" class="about-card">
+      <img id="resident1" src="images/resident1.png" alt="卒前">
+      <h3>卒前教育</h3>
+    </a>
+    <a href="resident.html#postgraduate" class="about-card">
+      <img id="resident2" src="images/resident2.png" alt="卒後">
+      <h3>卒後研修</h3>
+    </a>
+    <a href="resident.html#specialist" class="about-card">
+      <img id="resident3" src="images/resident3.png" alt="後期">
+      <h3>後期研修</h3>
+    </a>
+    <a href="resident.html#faq" class="about-card">
+      <img id="resident4" src="images/resident4.png" alt="質問">
+      <h3>よくある質問Q&A</h3>
+    </a>
+    <!-- 他のニュースカードもここに追加 -->
+  </div>
+ </section>
   </div>
 
   <div class="section">
-    <h2><a href="medication.html" class="menu-link">診療案内</a></h2>
+   <h2><a href="recruit.html" class="menu-link">専攻医募集・採用</a></h2>
+    <p>専攻医募集について。</p>
+ <section class="recruit-slider">
+  <div class="slider-container">
+     <a href="recruit.html" class="about-card">
+      <img id="recruit_img" src="images/recruit.png" alt="採用">
+      <h3>採用情報</h3>
+    </a>
+  </div>
+ </section>
+  </div>
+
+  <div class="section">
+    <h2><a href="medical.html" class="menu-link">診療案内</a></h2>
     <p>診療案内について。</p>
+ <section class="medical-slider">
+  <div class="slider-container">
+     <a href="medical.html#outpatient" class="about-card">
+      <img id="medical1" src="images/medical1.png" alt="受診">
+      <h3>外来受診案内</h3>
+    </a>
+     <a href="medical.html#inpatient" class="about-card">
+      <img id="medical2" src="images/medical2.png" alt="入院">
+      <h3>入院案内</h3>
+    </a>
+     <a href="medical.html#comedical" class="about-card">
+      <img id="medical3" src="images/medical3.png" alt="comedical">
+      <h3>他の医療スタッフより</h3>
+    </a>
+  </div>
+ </section>
   </div>
 
   <div class="section">
-    <h2><a href="acces.html" class="menu-link">アクセス</a></h2>
+    <h2><a href="access.html" class="menu-link">アクセス</a></h2>
     <p>新潟大学精神医学教室へのアクセス方法をご案内します。病院の構内図、最寄り駅からの経路なども掲載しています。</p>
+ <section class="recruit-slider">
+  <div class="slider-container">
+     <a href="access.html" class="about-card">
+      <img id="access_img" src="images/access.png" alt="アクセス">
+      <h3>アクセス案内</h3>
+    </a>
   </div>
+ </section>
+  </div>
+ 
 </main>
   
 <aside class="right-column">

@@ -9,7 +9,7 @@ setInterval(() => {
     behavior: "smooth"
   });
 }, 4000);
-// スマホ版のヘッダー省略形
+
 function toggleMobileNav() {
   const nav = document.getElementById("mobileNav");
   nav.style.display = nav.style.display === "block" ? "none" : "block";
@@ -59,25 +59,23 @@ window.addEventListener("load", function () {
     });
   });
 
-// トップヘッダーの分下げる機能
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href").substring(1);
-      const target = document.getElementById(targetId);
-      const header = document.querySelector(".top-header"); // ← 固定ヘッダーのクラス名に合わせる
-      if (!target || !header) return;
 
-      e.preventDefault();
+// トップヘッダーの分下げる機能 (全然うまくいかない！！)
 
-      const headerHeight = header.offsetHeight;
+window.addEventListener("load", function () {
+  if (location.hash) {
+    const id = location.hash.substring(1);
+    const target = document.getElementById(id);
+    if (target) {
+      setTimeout(() => {
+        const header = document.querySelector(".top-header");
+        const headerHeight = header ? header.offsetHeight : 0;
+        const extraOffset = 20;
+        const offsetTop =
+          target.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
 
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-      });
-    });
-  });
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      }, 200); // 遅延をやや長めにすると安定
+    }
+  }
 });

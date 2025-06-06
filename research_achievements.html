@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -269,6 +268,7 @@
 </head>
 
 <!--======= headerのhtml =======-->
+<body>
 <header class="top-header">
   <div class="logo-area">
     <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
@@ -356,106 +356,296 @@
 </header>
 
 <!--======= mainセクションのhtml ======= -->
-<!--main タグをつけてmain用のhtmlを作っている-->
- <main style="padding: 20px;">
+<main style="padding: 0 20px;">
 
-  <!--<section class="section_undergraduate" id="undergraduate">
-   <div class="section-header"><h1><a href="undergraduate.html">卒前教育</a></h1></div>-->
-  <h1>卒前教育</h1>
-    <div class="section">
-      <h2>臓器別コース（医学部3年）</h2>
-      <p>3年生では、約2週間ごとで臓器別統合コースが行われます。精神医学は早い時期から学び、総論的・臨床的理解を深めます。</p>
-      <p>内容は以下の3つのユニットからなり、「症例から精神を学ぶケーススタディ」「症例に関する講義」「症例に関する課題とレポート作成」で構成されています。</p>
-      <p>ケーススタディでは約40の症例を用い、症候を抽出し、診断に関する解説を受けます。また症候に関する講義を受講し、症状・症候を記憶に残すことができます。</p>
-      <p>また、「100のQ&A」を題材に、自ら資料を調べレポートを作成します。症例レポートの作成は教員の個別指導のもとで行われます。</p>
-      <p>統合講義では発達障害や認知症についても学習できます。</p>
-
-      <h3>【ユニット】</h3>
-      <ul>
-        <li>精神疾患（精神障害学入門、疫学、診断学、治療学、検査法、精神保健福祉と法）</li>
-        <li>気分障害</li>
-        <li>統合失調症</li>
-        <li>不安障害、強迫症、身体表現性障害、解離性障害、心身症</li>
-        <li>小児・発達障害</li>
-        <li>パーソナリティ障害、性障害、摂食障害、物質関連障害</li>
-        <li>精神科緊急場面</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>臨床実習Ⅰ（医学部4〜5年）</h2>
-      <p>4年生から5年生にかけて、3週間×3回を1年間にわたり実習していきます。</p>
-      <p>精神科では、学生がチーム医療の一員として臨床実践と主体的経験をできるよう参加型の実習プログラムを組んでいます。</p>
-
-      <h3>主な内容</h3>
-      <ol>
-        <li>病棟実習：指導医と上級医のチームに学生1〜2名ずつが配置されます。実際の診療に同行して精神科治療の手法や対応の仕方を学びます。</li>
-        <li>カルテ記載・振り返り：毎日病棟に通い、診察内容をカルテに記録し、指導医からフィードバックを受けます。</li>
-        <li>症例プレゼンテーション：担当症例の退院時にプレゼンテーションを行い、指導医・担当医とディスカッションします。</li>
-        <li>外来実習：予診と診察を医師とともに経験し、患者情報をもとにプレゼンテーションし予診練習を行います。</li>
-        <li>病棟朝礼会：毎週火曜の朝に行われる病棟朝礼で、前日入院した患者さんについて報告します。</li>
-        <li>関連病院実習：関連病院にて外来・病棟の実習を行い、白根や病院にて医師に同行します。</li>
-      </ol>
-    </div>
-
-  </main>
-<!--  本文のレイアウト用のcss（mainセクション限定）-->
-<!--main h1: ページの主見出し　などとしてmain用のstyleを作っている-->
-<style>
-main {
-  line-height: 1.8;
-  padding: 20px;
-  background-color: #fff;
-  color: #333;
-}
-main h1 {
-  font-size: 30px;
-  font-weight: bold;
-  background: linear-gradient(to right, #3366cc, #003366);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 8px;
+  <style>
+.section-header {
   text-align: center;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #003366;
+  color: white;
+  padding: 16px 12px;
+  font-size: 32px;          /* 大きく */
+  font-weight: 800;         /* 太字強調 */
+  letter-spacing: 1.5px;    /* 字間を少し広げる */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* 影で立体感 */
+  border: 4px solid #66ccff;
 }
+    .achievement-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-main h2 {
-  font-size: 24px;
-  font-weight: bold;
-  background-color: #003366; /* 濃紺 */
-  color: #ffffff;
+    .year-block {
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+.year-header {
+  background: linear-gradient(to right, #336699, #2a5784); /* ← 薄めのグラデーション */
+  color: white;
   padding: 14px 20px;
-  border-left: 8px solid #66ccff; /* 明るいブルーのライン */
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
   border-radius: 6px;
-  margin-top: 40px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
 
-main h3 {
-  font-size: 18px;
-  color: #002244;
-  padding: 6px 12px;
-  background-color: #e0ecff;
-  border-left: 4px solid #0055aa;
-  margin-top: 20px;
-  margin-bottom: 12px;
-  font-weight: bold;
-  border-radius: 4px;
+.year-header:hover {
+  background: linear-gradient(to right, #407bbf, #336699); /* ← 少し明るめでホバー */
 }
-main p {
-  margin: 10px 0;
-  text-align: justify;
+
+    .year-content {
+      display: none;
+      padding: 0 20px 20px;
+      background-color: #f9f9f9;
+    }
+
+.category-block {
+  
+  padding: 20px;
+  transition: background-color 0.3s;
 }
-main ul,
-main ol {
-  margin: 10px 0 20px 25px;
-  padding-left: 0;
+
+.category-block:hover {
+  background-color: #e0f0ff;
 }
-main ul li,
-main ol li {
+
+    .category-title {
+      font-size: 18px;
+      font-weight: bold;
+      border-left: 4px solid #337ab7;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .publication-item {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+
+    .publication-title {
+      color: #003366;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+.publication-title:hover {
+  color: #0055aa;
+  text-decoration: underline;
+}
+
+    .publication-authors {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .year-header:hover {
+      background-color: #00509e;
+    }
+.publication-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.publication-list li {
   margin-bottom: 8px;
 }
+.publication-list.folded li:nth-of-type(n+5) {/*4個まで表示 */
+  display: none;
+}
+
+/* 最初は非表示にする */
+.hidden {
+  display: none;
+}
+
+.more-button {
+  background-color: #00539b;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  margin-left: auto;  /* ← 右寄せ */
+}
+.more-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* より深い影 */
+  transform: translateY(-2px); /* 少し浮く */
+}
+
   </style>
+
+  <div class="section-header">研究業績紹介</div>
+
+  <div class="achievement-container">
+
+    <!-- 年度ブロック（2024） -->
+    <div class="year-block">
+      <div class="year-header" onclick="toggleContent(this)">2024年度</div>
+      <div class="year-content">
+<div class="publication-wrapper">
+ <ul class="publication-list">
+      <li><div class="category-block category-book">
+          <div class="category-title">原著論文</div>
+           <div class="publication-item">
+           <a href="original_articles.html" style="text-decoration: none;">
+            <div class="publication-title">Onda K, et al. Functional connectivity of the anterior cingulate cortex in schizophrenia...</div></a>
+            <div class="publication-authors">Schizophr Res. 2024;250:120–128.</div>
+           </div>
+            </div></li>
+
+      <li><div class="category-block">
+          <div class="category-title">著書・訳書</div>
+          <div class="publication-item">
+            <div class="publication-title">Onda K. 『精神疾患の最新研究2024』</div>
+            <div class="publication-authors">医学書院, 2024年.</div>
+          </div>
+        </div></li>
+ 
+
+        <li><div class="category-block">
+          <div class="category-title">症例報告</div>
+          <div class="publication-item">
+            <div class="publication-title">Tanaka Y, Onda K. A rare case of ...</div>
+            <div class="publication-authors">Clin Psychiatry. 2024;35(2):102–105.</div>
+          </div>
+        </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">報告書</div>
+          <div class="publication-item">
+            <div class="publication-title">厚生労働省精神医療プロジェクト 2024年度報告</div>
+            <div class="publication-authors">新潟大学精神医学教室.</div>
+          </div>
+           </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">総説</div>
+          <div class="publication-item">
+            <div class="publication-title">Sato T. Review on atypical antipsychotics...</div>
+            <div class="publication-authors">Japanese Journal of Psychiatry. 2024;67(1):33–45.</div>
+          </div>
+        </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">その他</div>
+          <div class="publication-item">
+            <div class="publication-title">講演：Onda K. 精神医学とAIの未来</div>
+            <div class="publication-authors">第25回日本精神医学会.</div>
+          </div>
+        </div></li>
+</ul>
+  <button class="more-button">もっと見る</button>
+      </div>
+</div>
+    </div>
+
+    <!-- 必要に応じて 2023年度以降も追加 -->
+   <!-- 年度ブロック（2023） -->
+    <div class="year-block">
+      <div class="year-header" onclick="toggleContent(this)">2023年度</div>
+      <div class="year-content">
+<div class="publication-wrapper">
+ <ul class="publication-list">
+      <li><div class="category-block category-book">
+          <div class="category-title">原著論文</div>
+           <div class="publication-item">
+           <a href="original_articles.html" style="text-decoration: none;">
+            <div class="publication-title">Onda K, et al. Functional connectivity of the anterior cingulate cortex in schizophrenia...</div></a>
+            <div class="publication-authors">Schizophr Res. 2024;250:120–128.</div>
+           </div>
+            </div></li>
+
+      <li><div class="category-block">
+          <div class="category-title">著書・訳書</div>
+          <div class="publication-item">
+            <div class="publication-title">Onda K. 『精神疾患の最新研究2024』</div>
+            <div class="publication-authors">医学書院, 2024年.</div>
+          </div>
+        </div></li>
+ 
+
+        <li><div class="category-block">
+          <div class="category-title">症例報告</div>
+          <div class="publication-item">
+            <div class="publication-title">Tanaka Y, Onda K. A rare case of ...</div>
+            <div class="publication-authors">Clin Psychiatry. 2024;35(2):102–105.</div>
+          </div>
+        </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">報告書</div>
+          <div class="publication-item">
+            <div class="publication-title">厚生労働省精神医療プロジェクト 2024年度報告</div>
+            <div class="publication-authors">新潟大学精神医学教室.</div>
+          </div>
+           </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">総説</div>
+          <div class="publication-item">
+            <div class="publication-title">Sato T. Review on atypical antipsychotics...</div>
+            <div class="publication-authors">Japanese Journal of Psychiatry. 2024;67(1):33–45.</div>
+          </div>
+        </div></li>
+
+        <li><div class="category-block">
+          <div class="category-title">その他</div>
+          <div class="publication-item">
+            <div class="publication-title">講演：Onda K. 精神医学とAIの未来</div>
+            <div class="publication-authors">第25回日本精神医学会.</div>
+          </div>
+        </div></li>
+</ul>
+  <button class="more-button">もっと見る</button>
+      </div>
+</div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleContent(header) {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // 各 publication-list が5件以上ある場合に folded クラス追加
+    document.querySelectorAll(".publication-list").forEach(list => {
+      const items = list.querySelectorAll("li");
+      if (items.length > 4) {
+        list.classList.add("folded");
+      }
+    });
+
+    // 「もっと見る」ボタンに機能を付与
+    document.querySelectorAll(".more-button").forEach(button => {
+      button.addEventListener("click", function () {
+        const list = this.previousElementSibling; // 直前の publication-list を取得
+        if (!list) return;
+
+        if (list.classList.contains("folded")) {
+          list.classList.remove("folded");
+          this.textContent = "閉じる";
+        } else {
+          list.classList.add("folded");
+          this.textContent = "もっと見る";
+        }
+      });
+    });
+  });
+  </script>
+
+</main>
+
+
 </html>
+
