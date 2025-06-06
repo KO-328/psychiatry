@@ -10,6 +10,8 @@ body {
   padding-top: 102px; /* topheader40 + ヘッダー分おそらく72の余白を確保 */
   overflow-x: hidden;
   word-wrap: break-word;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 /* トップヘッダーの共通スタイル */
 .top-header {
@@ -156,6 +158,26 @@ nav ul li a:hover {
 section[id], .section[id], #about {
   scroll-margin-top: 100px;
 }/*ここまでheader*/
+
+/*セクションヘッダーのホバー効果*/
+.section-header h2 a {
+  color: #ffffff;
+  background-color: #003366;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #003366;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.section-header h2 a:hover {
+  background-color: #1a4466;  /* ← #003366を少し明るく */
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px); /* 少し浮く感じ */
+}
 
 /* ========== スマホ対応レイアウト ========== */
 /* ハンバーガーとモバイルナビ用のスタイル */
@@ -343,11 +365,11 @@ h2 {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
-  z-index: 9999; /* 常に最前面に */
 }
 
 .view-more-btn:hover {
   background-color: #005599;
+  transform: translateY(-2px); /* 少し浮く感じ */
 }
 .neural-separator {
   background-image: url('images/neural-separator.png');
