@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新潟大学 精神医学教室</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding-top: 102px;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+    .section-header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .news-item {
+      background-color: #ffffff;
+      border-left: 5px solid #2e8b57;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .news-date {
+      color: #008000;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      scroll-margin-top: 112px;
+    }
+    .news-title {
+      background-color: #e8f0ff;
+      padding: 10px;
+      border-left: 4px solid #337ab7;
+      margin-bottom: 10px;
+    }
+    .news-title span {
+      font-weight: bold;
+    }
+    .news-citation {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .news-link {
+      text-align: right;
+      font-size: 12px;
+    }
+    .news-link a {
+      color: #6666cc;
+      text-decoration: none;
+    }
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background-color: #002244;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .top-header.hidden {
+      transform: translateY(-100%);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-utils a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .header-utils input[type="search"] {
+      padding: 6px 10px;
+      width: 150px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: none;
+    }
+    header {
+      position: fixed;
+      left: 0;
+      top: 72px;
+      width: 100%;
+      height: 30px;
+      z-index: 1000;
+      background: #003366;
+      color: white;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    .main-nav {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      padding: 10px 0;
+      z-index: 1000;
+      min-width: 160px;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      color: #003366;
+      background: white;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .dropdown li a:hover {
+      background: #f0f0f0;
+    }
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+    .top-header .title h1,
+    .top-header .title p {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    section[id], .section[id], #about {
+      scroll-margin-top: 100px;
+    }
+    .hamburger {
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+    }
+    .mobile-nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: #003366;
+      padding: 6px 12px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mobile-nav li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 6px 8px;
+      font-size: 14px;
+      border-bottom: 1px solid #445566;
+    }
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      body {
+        padding-top: 72px;
+      }
+      .top-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: auto;
+        position: fixed;
+      }
+      .top-header .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px;
+        max-width: 100%;
+      }
+      .top-header .title {
+        flex-shrink: 1;
+        min-width: 0;
+      }
+      header:not(.top-header) {
+        display: none;
+      }
+      .logo-area {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+      .header-utils {
+        display: none;
+      }
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+        gap: 5px;
+      }
+      .nav-item {
+        width: 100%;
+      }
+      .dropdown {
+        position: relative;
+        box-shadow: none;
+        background: #f9f9f9;
+      }
+      .dropdown li a {
+        background: none;
+        padding: 8px 12px;
+        padding-left: 30px;
+      }
+    }
+</style>
+</head>
+
+<!--======= headerのhtml =======-->
+<body>
+<header class="top-header">
+  <div class="logo-area">
+    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <img src="images/psy_logo.png" alt="新潟大学 精神医学教室" height="60">
+      <div class="title">
+        <h1 style="margin: 0; font-size: 20px; color: white;">新潟大学 精神医学教室</h1>
+        <p style="margin: 0; font-size: 12px; color: #ccc;">Department of Psychiatry, Niigata University</p>
+      </div>
+    </a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
+  <div class="header-utils">
+    <a href="#">お問い合わせ</a>
+    <a href="#">サイトマップ</a>
+    <input type="search" placeholder="サイト内検索">
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <ul class="main-nav">
+    <li><a href="news.html">NEWS</a></li>
+    <li><a href="about.html">教室紹介</a></li>
+    <li><a href="researcher.html">医療関係・研究者の方へ</a></li>
+    <li><a href="resident.html">研修医・医学部生の方へ</a></li>
+    <li><a href="recruit.html">専攻医募集・採用</a></li>
+    <li><a href="medical.html">診療案内</a></li>
+    <li><a href="access.html">アクセス</a></li>
+  </ul>
+</div>
+<header>
+  <nav class="main-nav-wrapper">
+    <ul class="main-nav">
+      <li class="nav-item">
+        <a href="news.html#news">NEWS</a>
+      </li> 
+      <li class="nav-item">
+        <a href="about.html">教室紹介</a>
+        <ul class="dropdown">
+          <li><a href="about.html#greeting">教授挨拶</a></li>
+          <li><a href="about.html#staff">スタッフ紹介</a></li>
+          <li><a href="about.html#history">教室の沿革</a></li>
+          <li><a href="about.html#community">地域医療教育センター</a></li>
+          <li><a href="about.html#kanren">地域精神医療学寄附講座</a></li>
+          <li><a href="about.html#kanren_hosp">関連病院・施設</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="researcher.html">医療関係・研究者の方へ</a>
+        <ul class="dropdown">
+          <li><a href="research_group.html">研究グループ紹介</a></li>
+          <li><a href="research_achievements.html">研究業績</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="resident.html">研修医・医学部生の方へ</a>
+        <ul class="dropdown">
+          <li><a href="undergraduate.html">卒前教育</a></li>
+          <li><a href="postgraduate.html">卒後臨床研修プログラム</a></li>
+          <li><a href="specialist.html">後期研修プログラム</a></li>
+          <li><a href="faq.html">よくある質問Q&A</a></li>
+        </ul>
+      </li>
+      <li><a href="recruit.html">専攻医募集・採用</a></li>
+      <li class="nav-item">
+        <a href="medical.html">診療案内</a>
+        <ul class="dropdown">
+          <li><a href="outpatient.html">受診される患者様へ</a></li>
+          <li><a href="inpatient.html">入院の案内</a></li>
+          <li><a href="comedical.html">他の医療スタッフより</a></li>
+        </ul>
+      </li>
+      <li><a href="access.html">アクセス</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--======= mainセクションのhtml ======= -->
+<!--main タグをつけてmain用のhtmlを作っている-->
+  <main style="padding: 20px;">
+    <h1 style="color: #3366cc; font-size: 28px; text-align: center; margin-bottom: 10px;">
+      地域精神医療学寄附講座
+    </h1>
+  <div class="names">
+    特任准教授　小野 信<br>
+    特任准教授　杉本 篤言
+  </div>
+
+  <p>新潟大学地域精神医療学寄附講座は、新潟県からの寄附により2015年4月1日、新潟大学大学院医歯学総合研究科に設置された講座であり、県の精神科医療における新潟県立精神医療センター内にサテライト・オフィスを置き、同センターを中心に臨床、研究、教育において、次の役割を果たしています。</p>
+
+  <ul>
+    <li>精神科救急医療において、新潟県立精神医療センターと新潟県内精神科救急医療体制の連携を図り、新潟県精神科救急システムの中心的役割を担います。</li>
+    <li>精神疾患患者のモータリティ・ギャップに関する調査、治療モデルの確立を目指します。</li>
+    <li>医療福祉現場における心のケアに加え、より専門的な調査・治療を目指します。</li>
+    <li>児童精神科領域の研究と人材育成を通じ、医療・福祉・教育・司法との連携を強化します。</li>
+  </ul>
+
+  <h2>～地域拠点機関との連携、精神科救急システムの中心的役割の確立～</h2>
+  <p>新潟県立精神医療センターは自体が拠点病院であって、その基本的役割は従来医療と先進的医療の併存提供にあります。具体的には、入院を前提とした従来型精神科社会復帰、地域移行支援の促進、精神科救急医療の充実など精神科基幹病院として必要な機能に加え、アルコールや薬物に関する依存症医療、災害時心のケアなどを行う災害精神医療、医療観察法病棟などの様々な取り組みを現場で担っています。</p>
+  <p>当寄附講座では、これらの多様な業務と密な連携を図るため、新潟大学大学院医歯学総合研究科精神医学分野、新潟県立精神医療センターと協力し、良質な精神科救急の提供、受療機会の平等化に向けた調査や診療、精神科専門医の育成を図ることで、新潟県の精神科医療への貢献を目指しています。</p>
+
+  <h2>～「モータリティギャップ」に関する調査、治療モデルの確立～</h2>
+  <p>疫学研究の分野では精神疾患に特に統合失調症を患う患者の、平均寿命は一般人口よりも10～25年短いと報告されています。この差は「モータリティ・ギャップ」と呼ばれています。その背景には心血管系疾患が関係しており、患者さんの生命や健康に多大な影響が出ています。当寄附講座では、心血管系疾患の危険因子に関する調査や生活習慣改善について調査を進め、リスクファクターの介入、受診啓発、適切なモニタリングについて検討し、精神疾患治療モデルの確立を目指します。</p>
+
+  <h2>～治療抵抗性統合失調症における、より高度な精神科医療体制～</h2>
+  <p>治療抵抗性のケースは統合失調症の総患者数の約3割に達するとされ、自由域の一部である好中球が減少してしまう副作用が全体の約1％程度に出現するため、定期的な採血が条件で1～2週間に一度の通院が必要とされます。現在、県内においては対応施設が限られ、遠隔通院が課題とされています。当講座では、新潟県立精神医療センターと連携し、クロザピンをはじめとした治療抵抗性統合失調症に向けた診療と研究に取り組み、患者負担の軽減と治療機会の平等化を目指しています。</p>
+
+  <h2>～児童精神科領域の研究推進、専門医の育成～</h2>
+  <p>児童精神科領域はその診療特性・制度特性・研修体制等の観点から精神科一般の中でも専門性が特に高く、従事者は非常に限られています。</p>
+  <p>新潟県では近年、児童精神科医療の基盤整備が進みつつあり、例えば新潟県立精神医療センター内に開設された「子ども・思春期ユニット」では、広汎性発達障害、注意欠如多動性障害、摂食障害、心的外傷後ストレス障害など、多様な疾患に対応する新たな小児精神科医療の体制が整備されつつあります。</p>
+  <p>当寄附講座では、こうした新潟県内の実情を踏まえ、発達障害や不登校、虐待などに対応できる人材・多職種の育成や診療体制の確立を目指した研究活動を行ってまいります。</p>
+  </main>
+<!--  本文のレイアウト用のcss（mainセクション限定)-->
+<!--main タグをつけてmain用のstyleを作っている-->
+  <style>
+main {
+  line-height: 1.8;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+}
+main h1 {
+  color: #3366cc;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .names {
+  text-align: right;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+main h2 {
+  color: #003366;
+  font-size: 20px;
+  margin-top: 30px;
+  border-left: 5px solid #3366cc;
+  padding-left: 10px;
+}
+main p {
+  margin: 10px 0;
+  text-align: justify;
+}
+main ul {
+  margin: 10px 0 20px 20px;
+}
+  </style>
+</body>
+</html>
