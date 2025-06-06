@@ -446,6 +446,14 @@ main {
 </style>
 
 <script>
+  function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  if (nav.style.display === 'block') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'block';
+  }
+}
   function toggleContent(button) {
     const content = button.previousElementSibling;
     const collapsed = content.classList.contains('collapsed');
