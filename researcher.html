@@ -677,6 +677,14 @@
 
   </style>
   <script>
+    function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  if (nav.style.display === 'block') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'block';
+  }
+}
      function toggleContent(header) {
       const content = header.nextElementSibling;
       content.style.display = content.style.display === 'block' ? 'none' : 'block';
