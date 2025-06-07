@@ -99,12 +99,12 @@
   <section class="prof-message" id="greeting">
    <div class="section-header"><h2>教授挨拶</h2></div>
     <img src="professor.jpg" alt="教授の写真" class="professor-photo">
-    <div class="greeting-text collapsed" id="greeting-text">
+    <div class="trim-text collapsed" id="trim-text">
     <p>
       本学精神医学教室は、〇〇年の設立以来、精神疾患の理解と治療の進展を目指して研究・教育・臨床に取り組んできました。時代の変化に応じた精神医療の提供と、次世代を担う精神科医の育成を目指しています。
     </p>
     <p>
-      神経科学やAI技術の活用、国内外との連携を通じて、よりよい精神医療の未来を築いていきたいと考えています。
+      神経科学やAI技術の活用、国内外との連携を通じて、よりよい精神医療の未来を築いていきたいと考えています。あいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねのあいうえおかきくけこさしすせそたちつてとなにぬねの
     </p>
     <p class="professor-name">新潟大学大学院 医歯学総合研究科<br>脳機能・精神医学分野 教授　朴　秀賢</p>
     </div>
@@ -178,6 +178,13 @@
           <div class="staff-info">
             <h4>恩田　啓伍</h4>
           </div>
+<div class="modal-overlay" id="staffModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalCloseBtn">&times;</button>
+    <h3 id="modalName">名前</h3>
+    <p id="modalDetails">ここに詳細プロフィールが入ります。</p>
+  </div>
+</div>
         </div>
 
         <div class="staff-card">
@@ -222,9 +229,17 @@
       </ul>
     </div>
   </div>
-      <div class="button-container">
+
+  <!-- ▼すべて表示ボタン（初期非表示） -->
+  <div class="button-container show-all-container" style="display: none;">
+    <a href="staff.html" class="show-all-button">すべて表示</a>
+  </div>
+
+  <!-- ▼もっと見るボタン -->
+  <div class="button-container">
     <button class="view-more-btn">もっと見る</button>
-      </div>
+  </div>
+  
   </section>
 
   <section class="history-section" id="history">
@@ -325,6 +340,12 @@
     <div class="history-row"><div class="history-year">明治43年 (1910年)</div>
      <div class="history-desc">官立新潟医学専門学校設立</div></div></div>
   </div>
+  <!-- ▼すべて表示ボタン（初期非表示） -->
+  <div class="button-container show-all-container" style="display: none;">
+    <a href="history.html" class="show-all-button">すべて表示</a>
+  </div>
+
+  <!-- ▼もっと見るボタン -->
       <div class="button-container">
     <button class="view-more-btn">もっと見る</button>
       </div>
@@ -462,13 +483,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleButtons.forEach(button => {
     button.addEventListener("click", function () {
-      const textBlock = this.closest(".button-container").previousElementSibling;
+      const section = this.closest("section");
+      const textBlock = section.querySelector(".trim-text");
+      const showAllContainer = section.querySelector(".show-all-container");
+
       if (!textBlock) return;
+
+      const isCollapsed = textBlock.classList.contains("collapsed");
       textBlock.classList.toggle("collapsed");
-      this.textContent = textBlock.classList.contains("collapsed") ? "もっと見る" : "閉じる";
+      this.textContent = isCollapsed ? "閉じる" : "もっと見る";
+
+      // showAllContainer が存在する場合のみ処理する
+      if (showAllContainer) {
+        showAllContainer.style.display = isCollapsed ? "block" : "none";
+      }
     });
   });
 });
 </script>
+
+
 </body>
 </html>
