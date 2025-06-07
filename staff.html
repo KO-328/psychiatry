@@ -367,11 +367,18 @@
   <div class="role-group">
     <h3>教授</h3>
     <div class="staff-grid">
-      <div class="staff-card">
+      <div class="staff-card wide-card" id="boku" onclick="toggleDetail(this)">
         <img src="images/about1.png" alt="教授写真" class="staff-photo">
         <div class="staff-info">
           <h4>朴　秀賢</h4>
         </div>
+
+        <div class="staff-detail">
+          <p>専門：精神病理学、司法精神医学</p>
+          <p>経歴：京都大学卒、医学博士aiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnm</p>
+         <!-- ここに自由に詳細追加可 -->
+        </div>
+
       </div>
     </div>
   </div>
@@ -380,11 +387,18 @@
   <div class="role-group">
     <h3>准教授</h3>
     <div class="staff-grid">
-      <div class="staff-card">
+      <div class="staff-card wide-card" id="egawa" onclick="toggleDetail(this)">
         <img src="images/resident3.png" alt="准教授写真" class="staff-photo">
         <div class="staff-info">
           <h4>江川　純</h4>
         </div>
+
+        <div class="staff-detail">
+          <p>専門：児童精神医学、社会精神医学</p>
+          <p>経歴：新潟大学卒、医学博士</p>
+         <!-- ここに自由に詳細追加可 -->
+        </div>
+
       </div>
     </div>
   </div>
@@ -407,7 +421,7 @@
 
       </div>
 
-      <div class="staff-card"  id="onda" onclick="toggleDetail(this)">
+      <div class="staff-card" id="onda" onclick="toggleDetail(this)">
         <img src="images/assistant1.jpg" alt="助教2" class="staff-photo">
         <div class="staff-info">
           <h4>恩田　啓伍</h4>
@@ -415,7 +429,7 @@
 
         <div class="staff-detail">
           <p>専門：精神病理学、社会精神医学</p>
-          <p>経歴：新潟大学卒、医学博士</p>
+          <p>経歴：新潟大学卒、医学博士aiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueokakikukekosasisusesoqwertyuiopasdfghjklzxcvbnmaiueo</p>
          <!-- ここに自由に詳細追加可 -->
         </div>
 
@@ -584,11 +598,18 @@ main {
   display: flex;
   flex-direction: column;
   cursor: pointer; /* マウスカーソルを手に */
+  scroll-margin-top: 112px; /* ヘッダー高さに応じて調整 */
 }
 .staff-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.staff-card.wide-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
 .staff-card h3 {
   margin: 10px 0 6px;
   font-size: 16px;
