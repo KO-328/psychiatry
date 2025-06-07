@@ -368,7 +368,7 @@
     <h3>教授</h3>
     <div class="staff-grid">
       <div class="staff-card">
-        <img src="images/someone.jpg" alt="教授写真" class="staff-photo">
+        <img src="images/about1.png" alt="教授写真" class="staff-photo">
         <div class="staff-info">
           <h4>朴　秀賢</h4>
         </div>
@@ -381,7 +381,7 @@
     <h3>准教授</h3>
     <div class="staff-grid">
       <div class="staff-card">
-        <img src="images/someone.jpg" alt="准教授写真" class="staff-photo">
+        <img src="images/resident3.png" alt="准教授写真" class="staff-photo">
         <div class="staff-info">
           <h4>江川　純</h4>
         </div>
@@ -407,7 +407,7 @@
 
       </div>
 
-      <div class="staff-card" onclick="toggleDetail(this)">
+      <div class="staff-card"  id="onda" onclick="toggleDetail(this)">
         <img src="images/assistant1.jpg" alt="助教2" class="staff-photo">
         <div class="staff-info">
           <h4>恩田　啓伍</h4>
@@ -505,6 +505,9 @@ main {
 .staff-section {
   padding: 20px;
   background: #f2f4f8;
+  flex-wrap: wrap;               /* 折り返しを許可 */
+  gap: 20px;                     /* カード間の余白 */
+  justify-content: space-between; /* 端から並べていく */
 }
 .university-section {
   background: #f0f4fa;
@@ -553,38 +556,54 @@ main {
 }
 .staff-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* 折り返しOK */
+  justify-content: flex-start; /* sa diplay: solid;のみだった。 */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   margin-top: 10px;
-  align-items: flex-start; /* ← これが重要！ *
+  align-items: start;
+}
+
+.staff-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 4px;
 }
 .staff-card {
-  width: 160px;
-  min-height: 220px;
+  width: 240px; /* ← 幅を固定 */ /* grid solidカラム幅に合わせwidth: 100%; */
   background: #ffffff;
   border-radius: 8px;
-  overflow: hidden;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-  border: 1px solid #777; /* ← ごく薄い枠線で境界を明示 */
-  cursor: pointer; /* マウスカーソルを手に */
+  border: 1px solid #e5e5e5;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; /* マウスカーソルを手に */
 }
 .staff-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+.staff-card h3 {
+  margin: 10px 0 6px;
+  font-size: 16px;
+  text-align: center;
+}
+
 .staff-detail {
   max-height:0;
+  line-height: 1.6;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
   opacity: 0;
-  font-size: 14px;
-  margin-top: 10px;
 }
 .staff-card.active .staff-detail {
-  max-height: 200px; /* 必要に応じて調整 */
+  max-height: 500px; /* 必要に応じて調整 */
   opacity: 1;
 }
 
