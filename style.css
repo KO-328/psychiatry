@@ -560,6 +560,9 @@ section[id], .section[id], #about, img[id], div[id] {
     width: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
   }
 
   .about-card {
@@ -574,6 +577,9 @@ section[id], .section[id], #about, img[id], div[id] {
   .section {
     margin: 0; 
     padding: 6px;
+    background: rgba(255, 255, 255, 0.6); /* ← 明示的に透明にする */
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05); /* 必要に応じて */
   }
   .news-list li {
    /* display: list-item;*/
