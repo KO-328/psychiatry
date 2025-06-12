@@ -558,7 +558,8 @@ section[id], .section[id], #about, img[id], div[id] {
   .center-column,
   .right-column {
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .about-card {
@@ -571,6 +572,7 @@ section[id], .section[id], #about, img[id], div[id] {
   }
 
   .section {
+    margin: 0; 
     padding: 16px;
   }
   .news-list ul li {
