@@ -266,6 +266,7 @@ nav ul li a:hover {
   gap: 14px;
   max-width: 2000px;
   margin-top: 0;
+  margin-bottom: 0;
   padding: 0 20px;
 }
 
