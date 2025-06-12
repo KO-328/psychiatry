@@ -280,7 +280,7 @@ nav ul li a:hover {
 .center-column {
   flex: 1;
   min-width: 0; /* ← これがないと、子要素が広がってはみ出す */
-  background-color rgba(255, 255, 255, 0.8); /* 白＋80%透明。完全透明なら transparent */
+  background-color: rgba(255, 255, 255, 0.8); /* 白＋80%透明。完全透明なら transparent */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -573,10 +573,17 @@ section[id], .section[id], #about, img[id], div[id] {
 
   .section {
     margin: 0; 
-    padding: 16px;
+    padding: 6px;
   }
-  .news-list ul li {
-    display: list-item;
+  .news-list li {
+   /* display: list-item;*/
+  font-size: 13px;         /* ← 小さくする（14px → 13px or 12px） */
+  line-height: 1.4;
+  padding: 4px 0;          /* ← 上下の間隔を詰める */
+  margin-bottom: 2px;      /* 項目間のスペースを縮小 */
+  display: flex;           /* 日付と本文を横並びにしたい場合 */
+  align-items: center;
+  gap: 6px;
   }
 
   .news-list:not(.show-all) ul li:nth-of-type(n+4) {
