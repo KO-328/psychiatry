@@ -583,7 +583,7 @@ section[id], .section[id], #about, img[id], div[id] {
   }
   .news-list li {
    /* display: list-item;*/
-  font-size: 13px;         /* ← 小さくする（14px → 13px or 12px） */
+  font-size: 14px;         /* ← 小さくする（14px → 13px or 12px） */
   line-height: 1.4;
   padding: 4px 0;          /* ← 上下の間隔を詰める */
   margin-bottom: 2px;      /* 項目間のスペースを縮小 */
