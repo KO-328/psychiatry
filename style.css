@@ -426,18 +426,17 @@ section[id] {
   color: red;                /* 訪問済みリンクは赤く */
 }
 /* 右列のリンク画面 */
-.right-column {
-  padding: clamp(10px, 2vw, 20px);
-  font-size: clamp(10px, 1.5vw, 15px);
-  background-color: white;
+/* 関連リンクの見出し：NEWSや教室紹介と統一 */
+.right-column .menu-link {
+  font-size: clamp(14px, 2vw, 20px);
+  background-color: #2b4d78;
+  color: white;
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 2vw, 14px);
   border-radius: clamp(6px, 1vw, 10px);
-  box-shadow: 0 0 clamp(4px, 1vw, 8px) rgba(0, 0, 0, 0.1);
-}
-
-.right-column h3 {
-  font-size: clamp(10px, 2vw, 16px);
-  margin-bottom: clamp(10px, 1.5vw, 16px);
-  color: #003366;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap; /* 折り返し防止 */
 }
 
 .right-column .link-list {
