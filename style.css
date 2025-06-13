@@ -342,7 +342,7 @@ a.menu-link:hover {
 }
 .menu-link-small {
   display: inline-block;
-  font-size: clamp(12px, 1.8vw, 18px); /* 小さめに設定 */
+  font-size: clamp(12px, 1.6vw, 18px); /* 小さめに設定 */
   background-color: #2b4d78;
   color: white;
   padding: clamp(4px, 0.8vw, 8px);
@@ -446,11 +446,11 @@ section[id] {
 }
 /* 右列のリンク画面 */
 /* 関連リンクの見出し：NEWSや教室紹介と統一 */
-.right-column .menu-link {
-  font-size: clamp(14px, 2vw, 20px);
+.right-column .menu-link-small {
+  font-size: clamp(12px, 1.6vw, 18px); /* 小さめに設定 */
   background-color: #2b4d78;
   color: white;
-  padding: clamp(6px, 1vw, 10px);
+  padding: clamp(4px, 0.8vw, 8px);
   border-radius: clamp(6px, 1vw, 10px);
   display: inline-block;
   font-weight: bold;
