@@ -340,6 +340,23 @@ a.menu-link:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* うっすら影で立体感 */
   transform: translateY(-2px); /* 少し浮き上がる */
 }
+.menu-link-small {
+  display: inline-block;
+  font-size: clamp(12px, 1.8vw, 18px); /* 小さめに設定 */
+  background-color: #2b4d78;
+  color: white;
+  padding: clamp(4px, 0.8vw, 8px);
+  border-radius: clamp(4px, 0.8vw, 8px);
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.menu-link-small:hover {
+  background-color: #1a4466;  /* ← #003366を少し明るく */
+  color: white; /* ← これがないと文字が読みにくい */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* うっすら影で立体感 */
+  transform: translateY(-2px); /* 少し浮き上がる */
+}
 /* NEWSの省略ボタン*/
 .news-list {
   list-style: none;
