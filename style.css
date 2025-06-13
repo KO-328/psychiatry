@@ -223,16 +223,17 @@ nav ul li a:hover {
 }
 .slide-button {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(0, 51, 102, 0.85);
+  bottom: 16px;
+  left: 16px;
+  background: #666666; /* ダークグレー背景 */
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 6px 14px; /* 少し小さめ */
+  font-size: 13px;
+  border-radius: 4px; /* 角丸やや少なめで四角風 */
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
-  opacity: 0;  /* ← 最初は非表示に */
+  transition: background 0.3s, transform 0.3s;
+  opacity: 0;/* 最初は非表示 */
   pointer-events: none;
 }
 .hero-slide:hover .slide-button {
@@ -242,6 +243,7 @@ nav ul li a:hover {
 
 .slide-button:hover {
   transform: translateY(-3px); /* 浮き上がり */
+  background: #222; /* 少し明るい黒にホバー変更 */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影が深くなる */
 }
 
@@ -601,7 +603,10 @@ section[id], .section[id], #about, img[id], div[id] {
     background: none;
     padding: 8px 12px;
   }
-
+  .slide-button {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
   .three-column-layout {
     flex-direction: column;
     gap: 20px;
