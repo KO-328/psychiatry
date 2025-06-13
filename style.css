@@ -425,7 +425,42 @@ section[id] {
 .about-card h3 a:visited {
   color: red;                /* 訪問済みリンクは赤く */
 }
+/* 右列のリンク画面 */
+.right-column {
+  padding: clamp(10px, 2vw, 20px);
+  font-size: clamp(10px, 1.5vw, 15px);
+  background-color: white;
+  border-radius: clamp(6px, 1vw, 10px);
+  box-shadow: 0 0 clamp(4px, 1vw, 8px) rgba(0, 0, 0, 0.1);
+}
 
+.right-column h3 {
+  font-size: clamp(10px, 2vw, 16px);
+  margin-bottom: clamp(10px, 1.5vw, 16px);
+  color: #003366;
+}
+
+.right-column .link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-column .link-list li {
+  margin-bottom: clamp(6px, 1vw, 10px);
+}
+
+.right-column .link-list a {
+  font-size: clamp(10px, 1.2vw, 15px);
+  text-decoration: none;
+  color: #003366;
+  transition: color 0.3s;
+}
+
+.right-column .link-list a:hover {
+  text-decoration: underline;
+  color: #0055aa;
+}
 footer {
   text-align: center;
   padding: 20px;
