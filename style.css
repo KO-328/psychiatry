@@ -322,12 +322,12 @@ aside ul li a:hover {
 /* NEWS,教室紹介などのボタンのホバー設定*/
 a.menu-link {
   display: inline-block; /* ← これが重要！ */
-  font-size: clamp(10px, 2.5vw, 20px);
+  font-size: clamp(12px, 2.5vw, 20px);
   text-decoration: none;
   white-space: nowrap; /* ← 強制的に折り返さない */
   color: white;
   background-color: rgba(0, 51, 102, 0.85);
-  padding: clamp(6px, 1vw, 10px) clamp(10px, 2vw, 14px);
+  padding: clamp(6px, 1vw, 10px);
   border-radius: 6px;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -431,7 +431,7 @@ section[id] {
   font-size: clamp(14px, 2vw, 20px);
   background-color: #2b4d78;
   color: white;
-  padding: clamp(6px, 1vw, 10px) clamp(10px, 2vw, 14px);
+  padding: clamp(6px, 1vw, 10px);
   border-radius: clamp(6px, 1vw, 10px);
   display: inline-block;
   font-weight: bold;
@@ -450,7 +450,7 @@ section[id] {
 }
 
 .right-column .link-list a {
-  font-size: clamp(10px, 1.2vw, 15px);
+  font-size: clamp(12px, 1.2vw, 15px);
   text-decoration: none;
   color: #003366;
   transition: color 0.3s;
@@ -549,7 +549,7 @@ section[id], .section[id], #about, img[id], div[id] {
   white-space: nowrap;         /* nowrapだと折り返し禁止 */
   overflow: hidden;            /* はみ出し部分を隠す（省略可能） */
   text-overflow: ellipsis;     /* はみ出したら "…" で省略（任意） */
-    font-size: 10px;  /* スマホ用にやや小さめに調整 */
+    font-size: 12px;  /* スマホ用にやや小さめに調整 */
     max-width: 100%;
   }
 
