@@ -209,7 +209,7 @@ nav ul li a:hover {
   bottom: 60px;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);/* 透明度 */
   color: white;
   padding: 12px 20px;
   font-size: 14px;
@@ -246,7 +246,7 @@ nav ul li a:hover {
 }
 
 .section {
-  background: rgba(255, 255, 255, 0.6); /* 白 + 60%不透明 */
+  background: rgba(255, 255, 255, 0.1); /* 白 + 10%不透明 */
   margin: 20px auto;
   max-width: 1400px;
   padding: 20px;
@@ -291,7 +291,7 @@ nav ul li a:hover {
 .center-column {
   flex: 1;
   min-width: 0; /* ← これがないと、子要素が広がってはみ出す */
-  background-color: rgba(255, 255, 255, 0.8); /* 白＋80%透明。完全透明なら transparent */
+  background-color: rgba(255, 255, 255, 0.1); /* 白＋80%透明。完全透明なら transparent */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
