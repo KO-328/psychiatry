@@ -48,7 +48,7 @@ body::before {
 }
 .top-nav {
   display: flex;
-  gap: 16px;            /* ナビ同士の余白 */
+  gap: 12px;            /* ナビ同士の余白 */
   list-style: none;     /* ・マークを消す */
   padding: 0;
   margin: 0;
