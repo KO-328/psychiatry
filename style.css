@@ -42,6 +42,10 @@ body::before {
   transition: transform 0.3s ease; /* ← スライドアニメーション */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.top-header nav {
+  display: flex;
+  gap: 20px; /* ナビ間のスペース */
+}
 
 /* 非表示時の状態（上へスライド） */
 .top-header.hidden {
