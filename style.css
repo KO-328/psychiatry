@@ -235,6 +235,10 @@ nav ul li a:hover {
   transition: background 0.3s, transform 0.3s;
   opacity: 0;/* 最初は非表示 */
   pointer-events: none;
+  /* 立体感を演出 */
+  font-weight: bold;
+  box-shadow: 0 3px 0 #222, 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #222;
 }
 .hero-slide:hover .slide-button {
   opacity: 1;
@@ -242,9 +246,10 @@ nav ul li a:hover {
 }
 
 .slide-button:hover {
-  transform: translateY(-3px); /* 浮き上がり */
-  background: #222; /* 少し明るい黒にホバー変更 */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影が深くなる */
+  background-color: #777777; /* 少し明るく */
+  transform: translateY(2px); /* 浮き下がる */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #222;
 }
 
 .section {
@@ -285,7 +290,7 @@ nav ul li a:hover {
 
 .left-column, .right-column {
   width: 15%;
-  background-color: rgba(255, 255, 255, 0.1); /* 白＋10%透明。完全透明なら transparent */
+  background-color: rgba(255, 255, 255, 0); /* 白＋0%透明。完全透明なら transparent */
   padding: 10px;
   border-radius: 8px;
 }
@@ -293,10 +298,10 @@ nav ul li a:hover {
 .center-column {
   flex: 1;
   min-width: 0; /* ← これがないと、子要素が広がってはみ出す */
-  background-color: rgba(255, 255, 255, 0.1); /* 白＋10%透明。完全透明なら transparent */
+  background-color: rgba(255, 255, 255, 0); /* 白＋0%透明。完全透明なら transparent */
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0);
 }
 
 aside h3, main h2 {
