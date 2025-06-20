@@ -443,6 +443,7 @@ h2 {
 
 .staff-card {
    width: 180px;
+   height: auto;
  /* 高さ固定なし height: 250px; */
   background-color: #fff;
   border-radius: 12px;
