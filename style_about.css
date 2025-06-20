@@ -499,6 +499,11 @@ h2 {
   max-height: 500px; /* 必要に応じて調整 */
   opacity: 1;
 }
+.staff-card.wide-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
 ul.namelist {
   margin: 0;
   padding-left: 20px;
