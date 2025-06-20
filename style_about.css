@@ -488,7 +488,17 @@ h2 {
   justify-content: center;
   height: 180px;
 }
-
+.staff-detail {
+  max-height:0;
+  line-height: 1.6;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.staff-card.active .staff-detail {
+  max-height: 500px; /* 必要に応じて調整 */
+  opacity: 1;
+}
 ul.namelist {
   margin: 0;
   padding-left: 20px;
